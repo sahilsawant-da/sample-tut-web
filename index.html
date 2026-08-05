@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TriMentor Academy | From Basics to Brilliance!</title>
+<meta name="description" content="TriMentor Academy in Lodha Splendora, Thane offers expert CBSE & ICSE coaching for Grades 6–10, with personalised attention, regular assessments and board-exam preparation.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="TriMentor Academy | From Basics to Brilliance!">
+<meta property="og:description" content="Expert CBSE & ICSE coaching for Grades 6–10 in Lodha Splendora, Thane.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logotut.png">
+<meta property="og:image:alt" content="TriMentor Academy logo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TriMentor Academy | From Basics to Brilliance!">
+<meta name="twitter:description" content="Expert CBSE & ICSE coaching for Grades 6–10 in Lodha Splendora, Thane.">
+<link rel="icon" type="image/png" href="logotut.png">
+<link rel="apple-touch-icon" href="logotut.png">
 
 <!--
   =========================================================================
@@ -126,6 +138,11 @@
     box-shadow:0 0 0 6px rgba(212,175,55,0.08), 0 0 40px rgba(212,175,55,0.25);
     opacity:0; transform:scale(.6);
     animation: sealIn 1s var(--ease) .15s forwards, sealGlow 2.4s ease-in-out 1.2s infinite;
+    overflow:hidden;
+  }
+  .splash-seal img{
+    width:100%; height:100%; object-fit:contain; border-radius:50%; display:block;
+    background:transparent;
   }
   @keyframes sealIn{to{opacity:1; transform:scale(1);}}
   @keyframes sealGlow{
@@ -196,8 +213,9 @@
   .brand-mark{
     width:38px; height:38px; border-radius:50%; border:1.5px solid var(--gold);
     display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:800; font-size:15px;
-    flex-shrink:0;
+    flex-shrink:0; overflow:hidden;
   }
+  .brand-mark img{width:100%; height:100%; object-fit:contain; border-radius:50%; display:block; background:transparent;}
   .brand span{color:var(--gold);}
   .nav-links{display:flex; align-items:center; gap:34px;}
   .nav-links a{color:var(--muted-light); font-size:14.5px; font-weight:600; transition:color .25s; position:relative;}
@@ -224,18 +242,20 @@
     background-size:26px 26px;
   }
   .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center; position:relative; z-index:2;}
-  .hero-badge{
+.hero-badge{
     display:inline-flex; align-items:center; gap:10px;
     background:rgba(212,175,55,0.12); border:1px solid rgba(212,175,55,0.35);
     color:var(--gold-light); padding:9px 18px; border-radius:100px; font-size:13px; font-weight:700;
     letter-spacing:.4px; margin-bottom:24px;
   }
-  .hero h1{
-    color:#fff; font-size:clamp(36px,5.2vw,58px); letter-spacing:.2px;
+  #hero h1{
+    color:#ffefc2; font-size:clamp(36px,5.2vw,58px); letter-spacing:.2px;
+    text-shadow: 0 2px 25px rgba(0,0,0,0.6);
   }
-  .hero h1 em{font-style:normal; color:var(--gold);}
-  .hero p.lead{
-    color:var(--muted-light); font-size:18px; max-width:480px; margin:22px 0 34px;
+  #hero h1 em{font-style:normal; color:#ffe68a; text-shadow:0 0 25px rgba(212,175,55,0.5), 0 2px 10px rgba(0,0,0,0.4);}
+  #hero p.lead{
+    color:#f4e6b8; font-size:18px; max-width:480px; margin:22px 0 34px;
+    font-weight:600; text-shadow:0 2px 12px rgba(0,0,0,0.5);
   }
   .hero-actions{display:flex; flex-wrap:wrap; gap:16px; margin-bottom:46px;}
   .hero-trustrow{display:flex; flex-wrap:wrap; gap:28px;}
@@ -307,11 +327,14 @@
      ===================================================================== */
   #about .about-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:60px; align-items:center;}
   .about-photo{
-    position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/5;
+    position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/3;
     background:linear-gradient(160deg, var(--navy-light), var(--navy-deep));
     display:flex; align-items:center; justify-content:center; color:var(--gold-light);
     font-family:var(--font-display); font-size:18px; text-align:center; padding:30px;
     border:1px solid #eee5cd;
+  }
+  .about-photo img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;
   }
   .about-photo .ph-badge{
     position:absolute; bottom:18px; left:18px; right:18px;
@@ -336,19 +359,28 @@
     border:1px solid #eee5cd; transition:transform .35s var(--ease), box-shadow .35s var(--ease);
   }
   .teacher-card:hover{transform:translateY(-8px); box-shadow:0 24px 50px -24px rgba(11,28,61,0.25);}
-  .teacher-photo{
+.teacher-photo{
     aspect-ratio:1/1; background:linear-gradient(150deg, var(--navy-light), var(--navy-deep));
     display:flex; align-items:center; justify-content:center; font-family:var(--font-display);
     font-size:40px; color:var(--gold-light); font-weight:700; position:relative;
+    overflow:hidden;
   }
+  .teacher-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:top center;
+    display:block; transition:transform .5s var(--ease);
+  }
+  .teacher-card:hover .teacher-photo img{transform:scale(1.06);}
   .teacher-photo .view-tag{
     position:absolute; bottom:10px; right:10px; background:rgba(255,255,255,0.92); color:var(--navy-deep);
     font-size:11px; font-weight:700; padding:6px 12px; border-radius:100px; letter-spacing:.3px;
+    z-index:2;
   }
   .teacher-info{padding:20px;}
   .teacher-info h3{font-size:17px; color:var(--navy-deep);}
-  .teacher-info .role{color:var(--gold); font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin:4px 0 10px;}
-  .teacher-info p{font-size:13.5px; color:#666f80;}
+  .teacher-info .role{color:#b8942e; font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin:4px 0 6px;}
+  .teacher-info .qualification{font-size:13.5px; color:#3d4557; font-weight:600; margin-bottom:4px;}
+  .teacher-info .experience{font-size:12.5px; color:#525b6e; display:flex; align-items:center; gap:6px; margin-top:4px;}
+  .teacher-info p{font-size:13.5px; color:#4a5270;}
 
   /* =====================================================================
      9. RESULTS GALLERY
@@ -366,6 +398,56 @@
   .result-card .rc-percent{font-family:var(--font-display); font-size:30px; font-weight:800; color:var(--navy-deep); position:relative;}
   .result-card .rc-name{margin-top:8px; font-weight:700; font-size:14.5px; position:relative;}
   .result-card .rc-sub{font-size:12.5px; color:#7a8296; position:relative;}
+
+  /* =====================================================================
+     9b. PHOTO GALLERY
+     ===================================================================== */
+  #gallery{background:var(--cream-dim);}
+  .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; grid-auto-rows:215px;}
+  .gallery-item{
+    position:relative; border-radius:var(--radius-md); overflow:hidden; cursor:pointer;
+    background:linear-gradient(150deg, var(--navy-light), var(--navy-deep));
+    border:1px solid #eee5cd;
+  }
+  .gallery-item.tall{grid-row:span 2;}
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .6s var(--ease);
+  }
+  .gallery-item:hover img{transform:scale(1.08);}
+  .gallery-item .g-overlay{
+    position:absolute; inset:0; background:linear-gradient(to top, rgba(7,15,36,0.88) 0%, rgba(7,15,36,0.18) 55%, transparent 100%);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:18px;
+    opacity:0; transition:opacity .4s var(--ease);
+  }
+  .gallery-item:hover .g-overlay{opacity:1;}
+  .gallery-item .g-cat{
+    align-self:flex-start; background:var(--gold); color:var(--navy-deepest); font-size:10.5px; font-weight:800;
+    padding:4px 10px; border-radius:100px; letter-spacing:.5px; text-transform:uppercase; margin-bottom:8px;
+  }
+  .gallery-item .g-title{color:#fff; font-family:var(--font-display); font-size:17px; font-weight:700;}
+  .gallery-item .g-sub{color:var(--muted-light); font-size:12.5px; margin-top:2px;}
+  .gallery-item .g-zoom{
+    position:absolute; top:14px; right:14px; width:34px; height:34px; border-radius:50%;
+    background:rgba(255,255,255,0.14); backdrop-filter:blur(6px); color:#fff; font-size:14px;
+    display:flex; align-items:center; justify-content:center; opacity:0; transform:scale(.6); transition:.35s var(--ease);
+  }
+  .gallery-item:hover .g-zoom{opacity:1; transform:scale(1);}
+  .gallery-item.placeholder .g-ph{
+    height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:var(--gold-light); text-align:center; padding:20px;
+  }
+  .gallery-item.placeholder .g-ph .g-ph-icon{font-size:30px;}
+  .gallery-item.placeholder .g-ph .g-ph-name{font-family:var(--font-display); font-size:15px; font-weight:700;}
+  .gallery-item.placeholder .g-ph .g-ph-hint{font-size:11.5px; color:var(--muted-light); font-family:var(--font-body); font-weight:500;}
+  .gallery-item.placeholder.has-img .g-ph{display:none;}
+  .gallery-cta{
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    background:linear-gradient(150deg, var(--navy-deep), var(--navy-deepest));
+    border:1px solid rgba(212,175,55,0.3); color:#fff; padding:26px;
+  }
+  .gallery-cta h3{font-size:19px; color:#fff; margin-bottom:10px;}
+  .gallery-cta p{color:var(--muted-light); font-size:13px; margin-bottom:16px;}
 
   /* =====================================================================
      10. TESTIMONIAL CAROUSEL
@@ -402,6 +484,35 @@
   .testi-arrow:hover{background:var(--gold); color:var(--navy-deepest);}
   .testi-arrow.prev{left:-58px;}
   .testi-arrow.next{right:-58px;}
+
+  /* =====================================================================
+     10b. VIDEO TESTIMONIALS
+     ===================================================================== */
+  #video-testimonials{background:var(--cream);}
+  .video-wrap{max-width:860px; margin:0 auto;}
+  .video-stage{
+    border-radius:var(--radius-lg); overflow:hidden; position:relative;
+    border:1px solid rgba(212,175,55,0.35);
+    box-shadow:0 30px 80px -30px rgba(7,15,36,0.55);
+    background:#000;
+  }
+  .video-stage video{
+    width:100%; aspect-ratio:16/9; display:block; object-fit:cover; background:#000;
+  }
+  .video-fallback{
+    display:none; text-align:center; padding:70px 30px; color:#fff;
+    background:linear-gradient(150deg, var(--navy-deepest), var(--navy));
+  }
+  .video-fallback.show{display:block;}
+  .video-fallback .vf-icon{font-size:46px; margin-bottom:16px;}
+  .video-fallback h3{font-family:var(--font-display); font-size:22px; color:#fff; margin-bottom:10px;}
+  .video-fallback p{color:var(--muted-light); font-size:14.5px; max-width:430px; margin:0 auto 8px;}
+  .video-fallback code{background:rgba(212,175,55,0.15); color:var(--gold-light); padding:3px 10px; border-radius:6px; font-size:13px;}
+  .video-note{
+    display:flex; align-items:center; gap:10px; justify-content:center;
+    margin-top:18px; color:#5a6378; font-size:13.5px;
+  }
+  .video-note::before{content:"📣";}
 
   /* =====================================================================
      11. MAP / LOCATION
@@ -530,9 +641,12 @@
   .admission-perks li::before{content:"★"; color:var(--gold);}
 
   .teacher-modal-photo{
-    aspect-ratio:16/9; border-radius:var(--radius-md); background:linear-gradient(150deg, var(--navy-light), var(--navy-deep));
+    aspect-ratio:3/4; border-radius:var(--radius-md); background:linear-gradient(150deg, var(--navy-light), var(--navy-deep));
     display:flex; align-items:center; justify-content:center; color:var(--gold-light); font-family:var(--font-display);
-    font-size:34px; font-weight:700; margin-bottom:20px;
+    font-size:34px; font-weight:700; margin-bottom:20px; overflow:hidden; position:relative;
+  }
+  .teacher-modal-photo img{
+    width:100%; height:100%; object-fit:contain; object-position:top center; display:block;
   }
   .teacher-modal h3{font-size:22px; color:var(--navy-deep);}
   .teacher-modal .role{color:var(--gold); font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.5px; margin:6px 0 16px;}
@@ -541,11 +655,48 @@
   .teacher-modal p{color:#5a6378; font-size:14.5px; margin-bottom:10px;}
 
   /* =====================================================================
+     15b. GALLERY LIGHTBOX
+     ===================================================================== */
+  .lightbox{
+    position:fixed; inset:0; z-index:900; background:rgba(7,15,36,0.94); backdrop-filter:blur(8px);
+    display:flex; align-items:center; justify-content:center; flex-direction:column;
+    opacity:0; visibility:hidden; transition:.35s var(--ease); padding:20px;
+  }
+  .lightbox.open{opacity:1; visibility:visible;}
+  .lightbox-figure{max-width:min(960px,92vw); max-height:84vh; display:flex; flex-direction:column; align-items:center;}
+  .lightbox-figure img{
+    max-width:100%; max-height:70vh; object-fit:contain; border-radius:var(--radius-md);
+    box-shadow:0 30px 80px -20px rgba(0,0,0,0.7);
+    transform:scale(.96); transition:.35s var(--ease);
+  }
+  .lightbox.open .lightbox-figure img{transform:scale(1);}
+  .lightbox-caption{color:#fff; text-align:center; margin-top:16px;}
+  .lightbox-caption b{font-family:var(--font-display); font-size:18px;}
+  .lightbox-caption span{display:block; color:var(--muted-light); font-size:13px; margin-top:4px;}
+  .lightbox-counter{color:var(--gold-light); font-size:13px; letter-spacing:1px; margin-top:8px;}
+  .lightbox-btn{
+    position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22); color:#fff; font-size:22px;
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .lightbox-btn:hover{background:var(--gold); color:var(--navy-deepest);}
+  .lightbox-btn.prev{left:22px;}
+  .lightbox-btn.next{right:22px;}
+  .lightbox-close{
+    position:absolute; top:22px; right:22px; width:44px; height:44px; border-radius:50%;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22); color:#fff; font-size:17px;
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .lightbox-close:hover{background:var(--gold); color:var(--navy-deepest);}
+  .lightbox-empty{color:var(--muted-light); text-align:center; font-size:15px; max-width:400px;}
+  .lightbox-empty b{color:#fff; font-family:var(--font-display); font-size:20px; display:block; margin-bottom:8px;}
+
+  /* =====================================================================
      16. RESPONSIVE
      ===================================================================== */
   @media(max-width:1000px){
     .hero-grid, .about-grid, .loc-grid, .contact-grid{grid-template-columns:1fr; gap:36px;}
-    .trust-grid, .teacher-grid, .results-grid{grid-template-columns:repeat(2,1fr);}
+    .trust-grid, .teacher-grid, .results-grid, .gallery-grid{grid-template-columns:repeat(2,1fr);}
     .stats-grid{grid-template-columns:repeat(2,1fr); row-gap:36px;}
     .footer-grid{grid-template-columns:1fr 1fr; row-gap:30px;}
     .testi-arrow{display:none;}
@@ -565,7 +716,13 @@
     .footer-bottom{flex-direction:column; text-align:center;}
   }
   @media(max-width:560px){
-    .trust-grid, .teacher-grid, .results-grid{grid-template-columns:1fr;}
+    .trust-grid, .teacher-grid, .results-grid, .gallery-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-auto-rows:200px;}
+    .gallery-item.tall{grid-row:span 1;}
+    .lightbox-btn{width:40px; height:40px; font-size:18px;}
+    .lightbox-btn.prev{left:6px;}
+    .lightbox-btn.next{right:6px;}
+    .lightbox-close{top:12px; right:12px;}
   }
 </style>
 </head>
@@ -575,7 +732,7 @@
      SPLASH / WELCOME SCREEN
      ===================================================================== -->
 <div id="splash">
-  <div class="splash-seal">TM</div>
+  <div class="splash-seal"><img src="logotut.png" alt="TriMentor Academy Logo"></div>
   <h1 class="splash-name">TriMentor <span>Academy</span></h1>
   <p class="splash-tagline">From Basics to Brilliance!</p>
   <p class="splash-quote">
@@ -592,14 +749,16 @@
 <header id="navbar">
   <div class="container nav-inner">
     <a href="#hero" class="brand">
-      <span class="brand-mark">TM</span>
+      <span class="brand-mark"><img src="logotut.png" alt="TriMentor Academy Logo"></span>
       TriMentor <span>Academy</span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#about">About Us</a>
       <a href="#teachers">Faculty</a>
       <a href="#results">Results</a>
+      <a href="#gallery">Gallery</a>
       <a href="#testimonials">Parent Reviews</a>
+      <a href="#video-testimonials">Videos</a>
       <a href="#location">Location</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -619,7 +778,7 @@
   <div class="floaty" style="width:80px; height:80px; background:radial-gradient(circle, rgba(63,174,106,.3), transparent 70%); bottom:14%; left:6%; animation-delay:1.5s;"></div>
   <div class="container hero-grid">
     <div class="reveal in-view">
-      <div class="hero-badge">🏅 Trusted by 200+ Families | Grades 6–10</div>
+      <div class="hero-badge">🏅 Grades 6–10 | CBSE & ICSE</div>
       <h1>Excellence in <em>Academics</em>,<br>From Basics to Brilliance!</h1>
       <p class="lead">TriMentor Academy Level Up Branch 2 provides expert teaching, regular assessments, personalized attention and board-exam success strategies for CBSE & ICSE students in Thane.</p>
       <div class="hero-actions">
@@ -718,7 +877,7 @@
 <section id="about">
   <div class="container about-grid">
     <div class="about-photo reveal">
-      📚
+      <img src="4.JPG" alt="TriMentor Academy classes at Lodha Splendora, Thane" />
       <div class="ph-badge">
         <b>TriMentor Academy — Level Up</b>
         <span>Grades 6–10 | CBSE & ICSE</span>
@@ -770,6 +929,20 @@
 </section>
 
 <!-- =====================================================================
+     PHOTO GALLERY
+     ===================================================================== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Life at TriMentor</div>
+      <h2>Inside Our Classrooms & Beyond</h2>
+      <p>Moments from our classes, activities and celebrations that make TriMentor Academy a second home for learning.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- =====================================================================
      TESTIMONIALS
      ===================================================================== -->
 <section id="testimonials">
@@ -786,6 +959,35 @@
         <div class="testi-track" id="testiTrack"></div>
       </div>
       <div class="testi-nav" id="testiNav"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     VIDEO TESTIMONIALS
+     ===================================================================== -->
+<section id="video-testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Watch & Believe</div>
+      <h2>Hear From Our Parents</h2>
+      <p>Nothing speaks louder than our parents. Press play to hear their TriMentor journey in their own words.</p>
+    </div>
+    <div class="video-wrap reveal">
+      <div class="video-stage">
+        <video id="parentVideo" controls playsinline preload="metadata" poster="parent-reviews-poster.jpg">
+          <source src="parent-reviews.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-fallback" id="videoFallback">
+          <div class="vf-icon">🎬</div>
+          <h3>Parent Review Video Coming Soon</h3>
+          <p>Drop your video file named</p>
+          <p><code>parent-reviews.mp4</code></p>
+          <p>in the same folder as <code>index.html</code> and it will play here automatically.</p>
+        </div>
+      </div>
+      <div class="video-note">Short parent testimonial videos, classes in action, and student success stories — all in one place.</div>
     </div>
   </div>
 </section>
@@ -847,17 +1049,17 @@
         <div class="form-row">
           <div class="form-group">
             <label>Parent's Name</label>
-            <input type="text" placeholder="Your full name" required>
+            <input type="text" name="parentName" placeholder="Your full name" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="tel" placeholder="+91 00000 00000" required>
+            <input type="tel" name="phone" placeholder="+91 00000 00000" autocomplete="tel" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Child's Grade</label>
-            <select required>
+            <select name="grade" required>
               <option value="">Select grade</option>
               <option>Grade 6</option>
               <option>Grade 7</option>
@@ -868,7 +1070,7 @@
           </div>
           <div class="form-group">
             <label>Subject of Interest</label>
-            <select required>
+            <select name="subject" required>
               <option value="">Select subject</option>
               <option>Mathematics</option>
               <option>Science</option>
@@ -880,10 +1082,10 @@
         </div>
         <div class="form-group full" style="margin-bottom:18px;">
           <label>Message (optional)</label>
-          <textarea rows="3" placeholder="Tell us a bit about your child's needs..."></textarea>
+          <textarea name="message" rows="3" placeholder="Tell us a bit about your child's needs..."></textarea>
         </div>
-        <button type="submit" class="btn btn-navy">Request a Callback</button>
-        <div class="form-success" id="formSuccess">✅ Thank you! We've received your request and will call you back shortly.</div>
+        <button type="submit" class="btn btn-navy">Send Enquiry on WhatsApp</button>
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">✅ Thank you! We've received your request and will call you back shortly.</div>
       </form>
     </div>
   </div>
@@ -909,7 +1111,9 @@
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#teachers">Our Faculty</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#results">Success Stories</a></li>
+          <li><a href="#video-testimonials">Videos</a></li>
           <li><a href="#contact">Admissions</a></li>
         </ul>
       </div>
@@ -969,6 +1173,23 @@
   <div class="modal-box teacher-modal" id="teacherModalContent"></div>
 </div>
 
+<!-- =====================================================================
+     GALLERY LIGHTBOX
+     ===================================================================== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <button class="lightbox-btn prev" id="lightboxPrev" aria-label="Previous">‹</button>
+  <button class="lightbox-btn next" id="lightboxNext" aria-label="Next">›</button>
+  <div class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="Gallery photo">
+    <div class="lightbox-caption">
+      <b id="lightboxTitle"></b>
+      <span id="lightboxSub"></span>
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+</div>
+
 
 <script>
 /* =========================================================================
@@ -977,9 +1198,36 @@
 
 // ---- TEACHERS DATA ----
 const teachers = [
-  { initials:"PK", name:"Mr. Priyesh Kunnath", role:"Mathematics & Science Faculty", years:"Expert educator", phone:"9769953027", bio:"Priyesh brings deep expertise in Mathematics and Science, focusing on concept clarity and problem-solving skills. Known for making complex topics accessible to all students.", tags:["B.Ed.","Expert Teacher","9769953027"] },
-  { initials:"JM", name:"Ms. Jayashree Mishra", role:"Science & English Specialist", years:"Experienced mentor", phone:"8652257033", bio:"Jayashree specializes in building strong foundations in Science and English, with a focus on regular assessments and personalized attention to ensure every student succeeds.", tags:["Experienced","Mentor","8652257033"] },
-  { initials:"SB", name:"Ms. Shamaita Bane", role:"All Subjects Expert", years:"Dedicated guide", phone:"9831566685", bio:"Shamaita works across all subjects with a success-focused approach, helping students prepare thoroughly for board exams with regular mock tests and doubt-clearing sessions.", tags:["All Subjects","Board Prep Expert","9831566685"] }
+  {
+    photo:"1.jpeg",
+    initials:"JM",
+    name:"Jayashree Mishra",
+    role:"Science & Chemistry Faculty",
+    qualification:"M.Sc. Chemistry, B.Ed.",
+    experience:"12+ years teaching Science & Chemistry",
+    tags:["Chemistry","Physics","Biology","Board Prep"],
+    bio:"Jayashree Mishra is a dedicated Science educator who turns every topic into a fun, memorable discovery. Her hands-on teaching approach, regular assessments, and exam-focused strategies ensure students truly understand and excel in all branches of Science."
+  },
+  {
+    photo:"2.jpeg",
+    initials:"PK",
+    name:"Mr. Priyesh Kunnat",
+    role:"Mathematics Faculty",
+    qualification:"M.Sc. Mathematics, B.Ed.",
+    experience:"10+ years teaching Mathematics for CBSE & ICSE",
+    tags:["Algebra","Geometry","Board Exam Prep"],
+    bio:"Mr. Priyesh Kunnat is a passionate Mathematics educator who makes complex concepts simple and approachable. With a strong focus on conceptual clarity and problem-solving speed, he has helped countless students secure top scores in their board examinations."
+  },
+  {
+    photo:"3.jpeg",
+    initials:"SB",
+    name:"Shamaita Benerjee",
+    role:"English Faculty",
+    qualification:"M.A. English, B.Ed.",
+    experience:"8+ years teaching English & Literature",
+    tags:["Grammar","Writing Skills","Literature"],
+    bio:"Shamaita Benerjee brings literature to life with engaging, interactive sessions. She specialises in building strong grammar foundations, sharpening writing skills, and boosting students' confidence in both spoken and written English."
+  }
 ];
 
 // ---- RESULTS DATA ----
@@ -998,6 +1246,16 @@ const testimonials = [
   { name:"Neha Gupta", role:"Mother of Diya, Grade 7", initials:"NG", quote:"My daughter loves going to classes. The faculty here genuinely cares about student success, not just filling seats." }
 ];
 
+// ---- GALLERY DATA (photo = filename in this folder; leave "" to show a placeholder) ----
+const galleryItems = [
+  { photo:"1.jpeg",   cat:"Classroom", title:"Concept Clarity Session", sub:"Maths with Mr. Priyesh", tall:true },
+  { photo:"2.jpeg",   cat:"Board Prep", title:"Doubt-Clearing Class",   sub:"Grade 10 students", tall:false },
+  { photo:"3.jpeg",   cat:"English",    title:"Grammar Workshop",       sub:"Interactive learning", tall:false },
+  { photo:"4.JPG",    cat:"Science",    title:"Hands-on Experiments",   sub:"Learning by doing", tall:false },
+  { photo:"",         cat:"Celebrations", title:"Festivals & Fun",       sub:"Add celebration.jpg to show", tall:false },
+  { photo:"",         cat:"Activities",  title:"Quiz & Awards Night",    sub:"Add awards.jpg to show", tall:false }
+];
+
 /* =========================================================================
    RENDER DYNAMIC SECTIONS
    ========================================================================= */
@@ -1006,11 +1264,12 @@ teachers.forEach((t,i)=>{
   const card = document.createElement('div');
   card.className = 'teacher-card reveal';
   card.innerHTML = `
-    <div class="teacher-photo">${t.initials}<span class="view-tag">View Profile</span></div>
+<div class="teacher-photo">${t.photo ? `<img src="${t.photo}" alt="${t.name}">` : t.initials}<span class="view-tag">View Profile</span></div>
     <div class="teacher-info">
       <h3>${t.name}</h3>
       <div class="role">${t.role}</div>
-      <p>${t.years}</p>
+      <div class="qualification">${t.qualification}</div>
+      <div class="experience">📅 ${t.experience}</div>
     </div>`;
   card.addEventListener('click', ()=> openTeacherModal(i));
   teacherGrid.appendChild(card);
@@ -1048,6 +1307,89 @@ testimonials.forEach((t,i)=>{
   dot.addEventListener('click', ()=> goToTesti(i));
   testiNav.appendChild(dot);
 });
+
+/* =========================================================================
+   PHOTO GALLERY (with graceful fallback if an image file is missing)
+   ========================================================================= */
+const galleryGrid = document.getElementById('galleryGrid');
+const lightboxItems = [];
+galleryItems.forEach(g=>{
+  const item = document.createElement('div');
+  item.className = 'gallery-item reveal' + (g.tall ? ' tall' : '') + (g.photo ? '' : ' placeholder');
+  item.innerHTML = `
+    <span class="g-zoom">⤢</span>
+    ${g.photo ? `<img src="${g.photo}" alt="${g.title}" loading="lazy">` : ''}
+    <div class="g-ph">
+      <div class="g-ph-icon">📷</div>
+      <div class="g-ph-name">${g.title}</div>
+      <div class="g-ph-hint">${g.sub}</div>
+    </div>
+    <div class="g-overlay">
+      <span class="g-cat">${g.cat}</span>
+      <div class="g-title">${g.title}</div>
+      <div class="g-sub">${g.sub}</div>
+    </div>`;
+  const img = item.querySelector('img');
+  if(img){
+    img.addEventListener('error', ()=>{ item.classList.add('placeholder','has-img'); });
+    if(g.photo){
+      const li = lightboxItems.length;
+      lightboxItems.push({ photo:g.photo, title:g.title, sub:g.sub, cat:g.cat });
+      item.addEventListener('click', ()=> openLightbox(li));
+    }
+  }
+  galleryGrid.appendChild(item);
+});
+
+/* =========================================================================
+   GALLERY LIGHTBOX
+   ========================================================================= */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxSub = document.getElementById('lightboxSub');
+const lightboxCounter = document.getElementById('lightboxCounter');
+let lightboxIndex = 0;
+
+function renderLightbox(){
+  const item = lightboxItems[lightboxIndex];
+  if(!item) return;
+  lightboxImg.src = item.photo;
+  lightboxTitle.textContent = item.title;
+  lightboxSub.textContent = item.cat + ' · ' + item.sub;
+  lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + lightboxItems.length;
+}
+function openLightbox(i){
+  lightboxIndex = i;
+  renderLightbox();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function moveLightbox(dir){
+  if(!lightboxItems.length) return;
+  lightboxIndex = (lightboxIndex + dir + lightboxItems.length) % lightboxItems.length;
+  renderLightbox();
+}
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', ()=> moveLightbox(-1));
+document.getElementById('lightboxNext').addEventListener('click', ()=> moveLightbox(1));
+lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+
+/* =========================================================================
+   VIDEO TESTIMONIALS — show fallback if parent-reviews.mp4 is not present
+   ========================================================================= */
+const parentVideo = document.getElementById('parentVideo');
+const videoFallback = document.getElementById('videoFallback');
+if(parentVideo){
+  parentVideo.addEventListener('error', ()=>{
+    parentVideo.style.display = 'none';
+    videoFallback.classList.add('show');
+  });
+}
 
 /* =========================================================================
    SPLASH SCREEN
@@ -1140,9 +1482,11 @@ function openTeacherModal(i){
   const t = teachers[i];
   teacherModalContent.innerHTML = `
     <div class="modal-close" onclick="closeTeacherModal()">✕</div>
-    <div class="teacher-modal-photo">${t.initials}</div>
+<div class="teacher-modal-photo">${t.photo ? `<img src="${t.photo}" alt="${t.name}">` : t.initials}</div>
     <h3>${t.name}</h3>
     <div class="role">${t.role}</div>
+    <p style="color:#3d4557; font-weight:600; font-size:14px; margin-bottom:8px;">${t.qualification}</p>
+    <p style="color:#525b6e; font-size:13.5px; margin-bottom:16px;">📅 ${t.experience}</p>
     <div class="teacher-modal-tags">${t.tags.map(tag=>`<span>${tag}</span>`).join('')}</div>
     <p>${t.bio}</p>
   `;
@@ -1170,13 +1514,34 @@ setTimeout(()=>{
    ========================================================================= */
 document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
-  document.getElementById('formSuccess').classList.add('show');
+  const data = new FormData(this);
+  const parentName = data.get('parentName').trim();
+  const phone = data.get('phone').trim();
+  const grade = data.get('grade');
+  const subject = data.get('subject');
+  const note = data.get('message').trim();
+  const whatsappMessage = [
+    '*New TriMentor Academy Enquiry*',
+    '',
+    `*Parent Name:* ${parentName}`,
+    `*Phone Number:* ${phone}`,
+    `*Child's Grade:* ${grade}`,
+    `*Subject of Interest:* ${subject}`,
+    `*Message:* ${note || 'Not provided'}`
+  ].join('\n');
+  const whatsappUrl = `https://wa.me/918652257033?text=${encodeURIComponent(whatsappMessage)}`;
+  const formSuccess = document.getElementById('formSuccess');
+  formSuccess.textContent = 'Opening WhatsApp with your enquiry details…';
+  formSuccess.classList.add('show');
+  window.open(whatsappUrl, '_blank', 'noopener');
   this.reset();
 });
 
-/* Close any open modal with Escape key */
+/* Close any open modal / lightbox with Escape key */
 document.addEventListener('keydown', (e)=>{
-  if(e.key === 'Escape'){ closeTeacherModal(); closeAdmissionModal(); }
+  if(e.key === 'Escape'){ closeTeacherModal(); closeAdmissionModal(); closeLightbox(); }
+  if(e.key === 'ArrowLeft' && lightbox.classList.contains('open')){ moveLightbox(-1); }
+  if(e.key === 'ArrowRight' && lightbox.classList.contains('open')){ moveLightbox(1); }
 });
 </script>
 </body>
