@@ -496,8 +496,8 @@
     box-shadow:0 30px 80px -30px rgba(7,15,36,0.55);
     background:#000;
   }
-  .video-stage video{
-    width:100%; aspect-ratio:16/9; display:block; object-fit:cover; background:#000;
+.video-stage video{
+    width:100%; height:auto; display:block; object-fit:contain; background:#000;
   }
   .video-fallback{
     display:none; text-align:center; padding:70px 30px; color:#fff;
@@ -975,15 +975,15 @@
     </div>
     <div class="video-wrap reveal">
       <div class="video-stage">
-        <video id="parentVideo" controls playsinline preload="metadata" poster="parent-reviews-poster.jpg">
-          <source src="parent-reviews.mp4" type="video/mp4">
+<video id="parentVideo" controls playsinline preload="metadata">
+          <source src="videotrimentors.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="video-fallback" id="videoFallback">
-          <div class="vf-icon">🎬</div>
+<div class="vf-icon">🎬</div>
           <h3>Parent Review Video Coming Soon</h3>
           <p>Drop your video file named</p>
-          <p><code>parent-reviews.mp4</code></p>
+          <p><code>videotrimentors.mp4</code></p>
           <p>in the same folder as <code>index.html</code> and it will play here automatically.</p>
         </div>
       </div>
@@ -1380,7 +1380,7 @@ document.getElementById('lightboxNext').addEventListener('click', ()=> moveLight
 lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
 
 /* =========================================================================
-   VIDEO TESTIMONIALS — show fallback if parent-reviews.mp4 is not present
+   VIDEO TESTIMONIALS — show fallback if videotrimentors.mp4 is not present
    ========================================================================= */
 const parentVideo = document.getElementById('parentVideo');
 const videoFallback = document.getElementById('videoFallback');
