@@ -194,7 +194,7 @@
   .splash-skip:hover{color:#fff; border-color:var(--gold);}
 
   @media(prefers-reduced-motion: reduce){
-    .splash-seal, .splash-name, .splash-tagline, .splash-quote, .splash-bar, .splash-skip{animation:none !important; opacity:1 !important; transform:none !important;}
+    .splash-seal, .splash-name, .splash-tagline, .splash-quote, .splash-bar, .splash-skip, .brand-name{animation:none !important; opacity:1 !important; transform:none !important;}
   }
 
   /* =====================================================================
@@ -209,14 +209,22 @@
     padding:12px 0; box-shadow:0 10px 30px -16px rgba(0,0,0,0.5);
   }
   .nav-inner{display:flex; align-items:center; justify-content:space-between;}
-  .brand{display:flex; align-items:center; gap:10px; color:#fff; font-family:var(--font-display); font-weight:700; font-size:21px;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; font-family:var(--font-display); font-weight:700; font-size:21px; white-space:nowrap;}
   .brand-mark{
     width:38px; height:38px; border-radius:50%; border:1.5px solid var(--gold);
     display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:800; font-size:15px;
     flex-shrink:0; overflow:hidden;
   }
   .brand-mark img{width:100%; height:100%; object-fit:contain; border-radius:50%; display:block; background:transparent;}
-  .brand span{color:var(--gold);}
+  .brand-name{
+    display:inline-block;
+    background:linear-gradient(105deg, #fff 20%, var(--gold-light) 43%, #fff 54%, var(--gold) 66%, #fff 82%);
+    background-size:240% 100%; background-position:100% 0;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:brandShimmer 5s ease-in-out infinite;
+  }
+  .brand-name > span{font-weight:800;}
+  @keyframes brandShimmer{0%,35%{background-position:100% 0;} 70%,100%{background-position:0 0;}}
   .nav-links{display:flex; align-items:center; gap:34px;}
   .nav-links a{color:var(--muted-light); font-size:14.5px; font-weight:600; transition:color .25s; position:relative;}
   .nav-links a:hover{color:#fff;}
@@ -720,15 +728,17 @@
     .footer-grid{grid-template-columns:1fr 1fr; row-gap:30px;}
     .testi-arrow{display:none;}
   }
-  @media(max-width:720px){
+  @media(max-width:1150px){
     .nav-links{
       position:fixed; top:0; right:0; height:100vh; width:78%; max-width:320px;
       background:var(--navy-deepest); flex-direction:column; align-items:flex-start; justify-content:center;
       padding:40px; gap:26px; transform:translateX(100%); transition:.4s var(--ease); z-index:600;
     }
     .nav-links.open{transform:translateX(0);}
-    .nav-toggle{display:flex;}
+    .nav-toggle{display:flex; flex-shrink:0;}
     .nav-cta .btn-outline{display:none;}
+  }
+  @media(max-width:720px){
     .nav-cta .btn-gold{padding:10px 16px !important; font-size:12.5px !important;}
     section{padding:64px 0;}
     .container{padding:0 20px;}
@@ -785,7 +795,7 @@
   <div class="container nav-inner">
     <a href="#hero" class="brand">
       <span class="brand-mark"><img src="logotut.png" alt="TriMentor Academy Logo"></span>
-      TriMentor <span>Academy</span>
+      <span class="brand-name">TriMentor <span>Academy</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#about">About Us</a>
