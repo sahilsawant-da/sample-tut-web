@@ -19,7 +19,7 @@
 
 <!--
   =========================================================================
-  TriMentor Academy — Level Up Branch 2
+  TriMentor Academy — Branch 2
   From Basics to Brilliance!
   Location: Ignis D, 0004, Lodha Splendora, G.B. Road, Thane
   ========================================================================= 
@@ -318,7 +318,7 @@
     background:linear-gradient(150deg, var(--navy-deepest), var(--navy));
     color:#fff;
   }
-  .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:30px; text-align:center;}
+  .stats-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:30px; text-align:center;}
   .stat-num{font-family:var(--font-display); font-size:clamp(32px,5vw,48px); font-weight:800; color:var(--gold-light);}
   .stat-label{margin-top:8px; color:var(--muted-light); font-size:14px; letter-spacing:.4px;}
 
@@ -419,24 +419,7 @@
   .tf-subjects{font-size:13px; color:#525b6e; line-height:1.5;}
 
   /* =====================================================================
-     9. RESULTS GALLERY
-     ===================================================================== */
-  #results{background:var(--cream);}
-  .results-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
-  .result-card{
-    background:#fff; border-radius:var(--radius-md); padding:24px 18px; text-align:center;
-    border:1px solid #eee5cd; position:relative; overflow:hidden;
-  }
-  .result-card::after{
-    content:""; position:absolute; top:-30px; right:-30px; width:90px; height:90px; border-radius:50%;
-    background:var(--gold-soft);
-  }
-  .result-card .rc-percent{font-family:var(--font-display); font-size:30px; font-weight:800; color:var(--navy-deep); position:relative;}
-  .result-card .rc-name{margin-top:8px; font-weight:700; font-size:14.5px; position:relative;}
-  .result-card .rc-sub{font-size:12.5px; color:#7a8296; position:relative;}
-
-  /* =====================================================================
-     9b. PHOTO GALLERY
+     9. PHOTO GALLERY
      ===================================================================== */
   #gallery{background:var(--cream-dim);}
   .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; grid-auto-rows:215px;}
@@ -732,8 +715,8 @@
      ===================================================================== */
   @media(max-width:1000px){
     .hero-grid, .about-grid, .loc-grid, .contact-grid{grid-template-columns:1fr; gap:36px;}
-    .trust-grid, .teacher-grid, .results-grid, .gallery-grid{grid-template-columns:repeat(2,1fr);}
-    .stats-grid{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .trust-grid, .teacher-grid, .tf-grid, .gallery-grid{grid-template-columns:repeat(2, minmax(0,1fr));}
+    .stats-grid{grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px;}
     .footer-grid{grid-template-columns:1fr 1fr; row-gap:30px;}
     .testi-arrow{display:none;}
   }
@@ -746,19 +729,35 @@
     .nav-links.open{transform:translateX(0);}
     .nav-toggle{display:flex;}
     .nav-cta .btn-outline{display:none;}
+    .nav-cta .btn-gold{padding:10px 16px !important; font-size:12.5px !important;}
     section{padding:64px 0;}
+    .container{padding:0 20px;}
+    .tf-note{border-radius:var(--radius-md); text-align:center; align-items:flex-start;}
     .form-row{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
     .footer-bottom{flex-direction:column; text-align:center;}
   }
   @media(max-width:560px){
-    .trust-grid, .teacher-grid, .results-grid, .gallery-grid{grid-template-columns:1fr;}
+    .brand{font-size:18px; gap:8px;}
+    .brand-mark{width:34px; height:34px;}
+    .nav-cta .btn-gold{padding:9px 12px !important; font-size:12px !important;}
+    .trust-grid, .teacher-grid, .tf-grid, .gallery-grid, .stats-grid{grid-template-columns:1fr;}
+    .stats-grid{row-gap:28px;}
+    .hero-actions .btn{width:100%;}
+    .hero-card{padding:22px 18px;}
+    .hero-mini-stats{gap:10px;}
+    .hero-mini-stats .mini{padding:13px 10px;}
+    .hero-mini-stats .mini b{font-size:21px;}
+    .contact-card, .contact-form, .modal-box{padding:26px 20px;}
     .gallery-grid{grid-auto-rows:200px;}
     .gallery-item.tall{grid-row:span 1;}
     .lightbox-btn{width:40px; height:40px; font-size:18px;}
     .lightbox-btn.prev{left:6px;}
     .lightbox-btn.next{right:6px;}
     .lightbox-close{top:12px; right:12px;}
+  }
+  @media(max-width:380px){
+    .nav-cta .btn-gold{display:none;}
   }
 </style>
 </head>
@@ -791,7 +790,6 @@
     <nav class="nav-links" id="navLinks">
       <a href="#about">About Us</a>
       <a href="#teachers">Faculty</a>
-      <a href="#results">Results</a>
       <a href="#gallery">Gallery</a>
       <a href="#testimonials">Parent Reviews</a>
       <a href="#video-testimonials">Videos</a>
@@ -816,7 +814,7 @@
     <div class="reveal in-view">
       <div class="hero-badge">🏅 Grades 6–10 | CBSE & ICSE</div>
       <h1>Excellence in <em>Academics</em>,<br>From Basics to Brilliance!</h1>
-      <p class="lead">TriMentor Academy Level Up Branch 2 provides expert teaching, regular assessments, personalized attention and board-exam success strategies for CBSE & ICSE students in Thane.</p>
+      <p class="lead">TriMentor Academy Branch 2 provides expert teaching, regular assessments, personalized attention and board-exam success strategies for CBSE & ICSE students in Thane.</p>
       <div class="hero-actions">
         <button class="btn btn-gold" onclick="openAdmissionModal()">📋 Book a Free Demo Class</button>
         <a href="#location" class="btn btn-outline">📍 Visit Our Centre</a>
@@ -835,9 +833,9 @@
           <span class="tag">Live</span>
         </div>
         <div class="hero-mini-stats">
-          <div class="mini"><b>96%</b><span>Avg. Board Score</span></div>
-          <div class="mini"><b>1:6</b><span>Teacher–Student Ratio</span></div>
-          <div class="mini"><b>3</b><span>Expert Faculty</span></div>
+          <div class="mini"><b>34 yrs</b><span>Top Teaching Experience</span></div>
+          <div class="mini"><b>13+</b><span>Experienced Educators</span></div>
+          <div class="mini"><b>Grades 6–10</b><span>Focused Learning</span></div>
           <div class="mini"><b>CBSE & ICSE</b><span>Specialist Centre</span></div>
         </div>
         <div class="hero-card-quote">"My son's board exam score went from 78% to 92% in just one year at TriMentor. The personalized attention made all the difference." </div>
@@ -892,16 +890,12 @@
         <div class="stat-label">Years of Excellence</div>
       </div>
       <div>
-        <div class="stat-num" data-count="200">0</div>
-        <div class="stat-label">Students Mentored</div>
+        <div class="stat-num" data-count="200" data-suffix="+">0</div>
+        <div class="stat-label">Students Mentored &amp; Counting</div>
       </div>
       <div>
         <div class="stat-num" data-count="3">0</div>
         <div class="stat-label">Expert Teachers</div>
-      </div>
-      <div>
-        <div class="stat-num" data-count="96">0</div>
-        <div class="stat-label">Avg Board Score %</div>
       </div>
     </div>
   </div>
@@ -915,14 +909,14 @@
     <div class="about-photo reveal">
       <img src="4.JPG" alt="TriMentor Academy classes at Lodha Splendora, Thane" />
       <div class="ph-badge">
-        <b>TriMentor Academy — Level Up</b>
+        <b>TriMentor Academy</b>
         <span>Grades 6–10 | CBSE & ICSE</span>
       </div>
     </div>
     <div class="about-text reveal">
       <div class="eyebrow">About TriMentor Academy</div>
       <h2>Building Concept Clarity, Ensuring Success</h2>
-      <p>TriMentor Academy Level Up Branch 2 is committed to helping students from grades 6–10 master CBSE and ICSE curricula with confidence and clarity.</p>
+      <p>TriMentor Academy Branch 2 is committed to helping students from grades 6–10 master CBSE and ICSE curricula with confidence and clarity.</p>
       <p>We provide expert teaching, regular assessments, and personalized attention to ensure every student achieves their best. Our success-focused approach has helped hundreds of students excel in their board exams.</p>
       <ul class="about-points">
         <li>Concept clarity sessions</li>
@@ -962,20 +956,6 @@
     </div>
     <div class="tf-note reveal">Our expert travelling faculty conducts classes on-site, bringing quality education closer to every student.</div>
     <div class="tf-grid" id="tfGrid"></div>
-  </div>
-</section>
-
-<!-- =====================================================================
-     RESULTS GALLERY
-     ===================================================================== -->
-<section id="results">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Proven Track Record</div>
-      <h2>Results That Speak for Themselves</h2>
-      <p>A glimpse of the milestones our students have achieved with us.</p>
-    </div>
-    <div class="results-grid" id="resultsGrid"></div>
   </div>
 </section>
 
@@ -1055,7 +1035,7 @@
     </div>
     <div class="loc-grid reveal">
       <div class="loc-info">
-        <h3>TriMentor Academy — Level Up Branch 2</h3>
+        <h3>TriMentor Academy — Branch 2</h3>
         <div class="addr">
           <span>📍</span>
           <div>
@@ -1154,7 +1134,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">TriMentor <span>Academy</span></div>
-        <p>Level Up Branch 2 — From Basics to Brilliance! Located at Lodha Splendora, Thane. Excellence in academics for grades 6–10, CBSE & ICSE boards.</p>
+        <p>Branch 2 — From Basics to Brilliance! Located at Lodha Splendora, Thane. Excellence in academics for grades 6–10, CBSE & ICSE boards.</p>
 <div class="footer-social">
           <a href="https://www.instagram.com/trimentors_academy" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
           <a href="https://www.linkedin.com/in/trimentors-academy-a09bb2427" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -1168,7 +1148,6 @@
           <li><a href="#about">About Us</a></li>
           <li><a href="#teachers">Our Faculty</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#results">Success Stories</a></li>
           <li><a href="#video-testimonials">Videos</a></li>
           <li><a href="#contact">Admissions</a></li>
         </ul>
@@ -1192,7 +1171,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 TriMentor Academy. All rights reserved. Level Up Branch 2 — From Basics to Brilliance!</span>
+      <span>© 2026 TriMentor Academy. All rights reserved. Branch 2 — From Basics to Brilliance!</span>
       <span>Admissions Open for 2026–27 | Grades 6–10 | CBSE & ICSE</span>
     </div>
   </div>
@@ -1257,12 +1236,12 @@ const teachers = [
   {
     photo:"1.jpeg",
     initials:"JM",
-    name:"Jayashree Mishra",
+    name:"Mrs. Jayashree Mishra",
     role:"Science & Chemistry Faculty",
     qualification:"M.Sc. Chemistry, B.Ed.",
     experience:"12+ years teaching Science & Chemistry",
-    tags:["Chemistry","Physics","Biology","Board Prep"],
-    bio:"Jayashree Mishra is a dedicated Science educator who turns every topic into a fun, memorable discovery. Her hands-on teaching approach, regular assessments, and exam-focused strategies ensure students truly understand and excel in all branches of Science."
+    tags:["Chemistry","Maths","Biology","Board Prep"],
+    bio:"Mrs. Jayashree Mishra is a dedicated Science educator who turns every topic into a fun, memorable discovery. Her hands-on teaching approach, regular assessments, and exam-focused strategies ensure students truly understand and excel in all branches of Science."
   },
   {
     photo:"2.jpeg",
@@ -1271,7 +1250,7 @@ const teachers = [
     role:"Mathematics Faculty",
     qualification:"M.Sc. Mathematics, B.Ed.",
     experience:"10+ years teaching Mathematics for CBSE & ICSE",
-    tags:["Algebra","Geometry","Board Exam Prep"],
+    tags:["Maths","Physics"],
     bio:"Mr. Priyesh Kunnat is a passionate Mathematics educator who makes complex concepts simple and approachable. With a strong focus on conceptual clarity and problem-solving speed, he has helped countless students secure top scores in their board examinations."
   },
   {
@@ -1279,8 +1258,8 @@ const teachers = [
     initials:"SB",
     name:"Shamaita Benerjee",
     role:"English Faculty",
-    qualification:"M.A. English, B.Ed.",
-    experience:"8+ years teaching English & Literature",
+    qualification:"Postgraduate Specialization in English",
+    experience:"8+ years as an English Educator",
     tags:["Grammar","Writing Skills","Literature"],
 bio:"Shamaita Benerjee brings literature to life with engaging, interactive sessions. She specialises in building strong grammar foundations, sharpening writing skills, and boosting students' confidence in both spoken and written English."
   }
@@ -1288,25 +1267,19 @@ bio:"Shamaita Benerjee brings literature to life with engaging, interactive sess
 
 // ---- TRAVELLING FACULTY / TEAM OF TRIMENTORS DATA ----
 const travellingFaculty = [
-  { initials:"PK", name:"Mr. Priyesh Kunnat", qualification:"M.Sc. Mathematics, B.Ed.", experience:"10+ yrs", subjects:"Mathematics, Science Foundation" },
-  { initials:"SB", name:"Shamaita Benerjee",   qualification:"M.A. English, B.Ed.",      experience:"8+ yrs",  subjects:"English, Communication Skills" },
-  { initials:"JM", name:"Jayashree Mishra",     qualification:"M.Sc. Chemistry, B.Ed.",  experience:"12+ yrs", subjects:"Chemistry, Physics, Biology" },
-  { initials:"AK", name:"Mr. Anil Tukaram Kasar", qualification:"M.Sc., B.Ed.",          experience:"10+ yrs", subjects:"Mathematics, Physics" },
-  { initials:"IB", name:"Indrani Banerjee",     qualification:"M.A., B.Ed.",              experience:"9+ yrs",  subjects:"English, Social Studies" },
-  { initials:"BD", name:"Banita Das",           qualification:"M.Sc., B.Ed.",             experience:"8+ yrs",  subjects:"Mathematics, Science" },
-  { initials:"SK", name:"Savita Padmanabhan Kurup", qualification:"M.A., B.Ed.",          experience:"12+ yrs", subjects:"English, Literature, SST" },
-  { initials:"MV", name:"Manisha Vaidya",       qualification:"M.Com., B.Ed.",            experience:"10+ yrs", subjects:"Mathematics, Accountancy" },
-  { initials:"LD", name:"Latha Divedi",         qualification:"M.Sc., B.Ed.",             experience:"9+ yrs",  subjects:"Science, Mathematics" },
-  { initials:"AB", name:"Mr. Abhishek",         qualification:"M.Sc., B.Ed.",             experience:"7+ yrs",  subjects:"Physics, Mathematics" },
-  { initials:"PC", name:"Piyali Chatterjee",    qualification:"M.A., B.Ed.",              experience:"8+ yrs",  subjects:"English, Social Studies" }
-];
-
-// ---- RESULTS DATA ----
-const results = [
-  { percent:"96%", name:"Aarav M.", sub:"Grade 10 Boards" },
-  { percent:"94%", name:"Aisha D.", sub:"Grade 9 Boards" },
-  { percent:"92%", name:"Arjun P.", sub:"Grade 10 Boards" },
-  { percent:"95%", name:"Diya G.", sub:"Grade 8 Exams" }
+  { initials:"PK", name:"Mr. Priyesh Kunnat", qualification:"M.Sc. Mathematics, B.Ed.", experience:"10+ yrs", subjects:"Maths, Physics" },
+  { initials:"SB", name:"Shamaita Benerjee",   qualification:"Postgraduate Specialization in English", experience:"8+ yrs", subjects:"English" },
+  { initials:"JM", name:"Mrs. Jayashree Mishra", qualification:"M.Sc. Chemistry, B.Ed.", experience:"12+ yrs", subjects:"Chemistry, Maths, Biology" },
+  { initials:"AK", name:"Mr. Anil Tukaram Kasar", qualification:"M.A., B.Ed.",           experience:"34 yrs", subjects:"Hindi, Marathi" },
+  { initials:"IB", name:"Indrani Banerjee",     qualification:"M.Sc. Geography, B.Ed.",   experience:"16 yrs", subjects:"Geography, Economics" },
+  { initials:"BD", name:"Banita Das",           qualification:"M.Sc. Chemistry, B.Ed.",   experience:"11 yrs (9 ICSE + 2 CBSE)", subjects:"Chemistry" },
+  { initials:"SK", name:"Savita Padmanabhan Kurup", qualification:"M.Sc. Zoology, B.Ed.; CTET Qualified", experience:"10 yrs", subjects:"Biology" },
+  { initials:"MV", name:"Manisha Vaidya",       qualification:"M.A., B.Ed.",              experience:"18 yrs", subjects:"Sanskrit, Hindi, Marathi" },
+  { initials:"LD", name:"Latha Divedi",         qualification:"M.A. English, M.Ed.",       experience:"15 yrs", subjects:"English" },
+  { initials:"AB", name:"Mr. Abhishek",         qualification:"B.Sc. Mathematics, B.A. English Literature", experience:"12 yrs school teaching + 15 yrs commercial teaching", subjects:"Mathematics" },
+  { initials:"PC", name:"Piyali Chatterjee",    qualification:"B.Sc. Physics, Mathematics & Electronics; MSW (Labour Welfare & Personnel Management)", experience:"31 yrs", subjects:"Mathematics, Physics (up to Std. 10; ICSE, CBSE & SSC)" },
+  { initials:"PV", name:"Priyanka Vaishnav",    qualification:"M.A., B.Ed.",              experience:"6 yrs", subjects:"Hindi" },
+  { initials:"HK", name:"Harjeet Kaur",         qualification:"M.A., B.Ed.",              experience:"10 yrs", subjects:"Social Studies" }
 ];
 
 // ---- TESTIMONIALS DATA ----
@@ -1359,14 +1332,6 @@ travellingFaculty.forEach(tf=>{
     <div class="tf-exp">📅 ${tf.experience}</div>
     <div class="tf-subjects">${tf.subjects}</div>`;
   tfGrid.appendChild(card);
-});
-
-const resultsGrid = document.getElementById('resultsGrid');
-results.forEach(r=>{
-  const card = document.createElement('div');
-  card.className = 'result-card reveal';
-  card.innerHTML = `<div class="rc-percent">${r.percent}</div><div class="rc-name">${r.name}</div><div class="rc-sub">${r.sub}</div>`;
-  resultsGrid.appendChild(card);
 });
 
 const testiTrack = document.getElementById('testiTrack');
@@ -1527,7 +1492,7 @@ function animateCounters(){
     const stepTime = Math.max(16, duration / target);
     const step = ()=>{
       current += Math.ceil(target / (duration / 16));
-      if(current >= target){ el.textContent = target; }
+      if(current >= target){ el.textContent = target + (el.dataset.suffix || ''); }
       else { el.textContent = current; requestAnimationFrame(step); }
     };
     step();
@@ -1632,4 +1597,3 @@ document.addEventListener('keydown', (e)=>{
 </script>
 </body>
 </html>
-
