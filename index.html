@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TriMentor Academy | From Basics to Brilliance!</title>
+<meta name="description" content="TriMentor Academy in Lodha Splendora, Thane offers expert CBSE & ICSE coaching for Grades 6–10, with personalised attention, regular assessments and board-exam preparation.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="TriMentor Academy | From Basics to Brilliance!">
+<meta property="og:description" content="Expert CBSE & ICSE coaching for Grades 6–10 in Lodha Splendora, Thane.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logotut.png">
+<meta property="og:image:alt" content="TriMentor Academy logo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TriMentor Academy | From Basics to Brilliance!">
+<meta name="twitter:description" content="Expert CBSE & ICSE coaching for Grades 6–10 in Lodha Splendora, Thane.">
+<link rel="icon" type="image/png" href="logotut.png">
+<link rel="apple-touch-icon" href="logotut.png">
+
+<!--
+  =========================================================================
+  TriMentor Academy — Branch 2
+  From Basics to Brilliance!
+  Location: Ignis D, 0004, Lodha Splendora, G.B. Road, Thane
+  ========================================================================= 
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* =====================================================================
+     1. DESIGN TOKENS — edit these to re-theme the entire site
+     ===================================================================== */
+  :root{
+    /* Premium navy + gold trust palette */
+    --navy-deepest:#070f24;
+    --navy-deep:#0b1c3d;
+    --navy:#122a56;
+    --navy-light:#1d3c73;
+    --navy-glass: rgba(18,42,86,0.55);
+    --gold:#d4af37;
+    --gold-light:#f3d98b;
+    --gold-soft: rgba(212,175,55,0.16);
+    --cream:#faf7ef;
+    --cream-dim:#efe9d8;
+    --ink:#0c1626;
+    --muted: #9fb0cc;
+    --muted-light:#c9d3e6;
+    --success:#3fae6a;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Manrope', -apple-system, Segoe UI, Roboto, sans-serif;
+
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 20px 60px -20px rgba(7,15,36,0.55);
+    --ease: cubic-bezier(.22,.9,.32,1);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display); font-weight:700; line-height:1.18;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--gold); font-weight:700; margin-bottom:14px;
+  }
+  .eyebrow::before{content:""; width:26px; height:2px; background:var(--gold);}
+  .section-head{max-width:640px; margin:0 auto 52px; text-align:center;}
+  .section-head h2{font-size:clamp(28px,4vw,42px); color:var(--navy-deep);}
+  .section-head p{color:#5a6378; margin-top:14px; font-size:16.5px;}
+  section{padding:96px 0; position:relative;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:15px 30px; border-radius:100px; font-weight:700; font-size:15px;
+    letter-spacing:.3px; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:var(--navy-deepest);
+    box-shadow:0 12px 30px -8px rgba(212,175,55,0.55);
+  }
+  .btn-gold:hover{transform:translateY(-3px); box-shadow:0 18px 36px -8px rgba(212,175,55,0.7);}
+  .btn-outline{
+    border:1.5px solid rgba(255,255,255,0.55);
+    color:#fff;
+  }
+  .btn-outline:hover{background:rgba(255,255,255,0.12); transform:translateY(-3px);}
+  .btn-navy{
+    background:var(--navy-deep); color:#fff;
+  }
+  .btn-navy:hover{transform:translateY(-3px); box-shadow:0 14px 30px -10px rgba(11,28,61,0.6);}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+
+  /* =====================================================================
+     2. SPLASH / WELCOME ANIMATION
+     ===================================================================== */
+  #splash{
+    position:fixed; inset:0; z-index:9999;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(212,175,55,0.12), transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(29,60,115,0.5), transparent 50%),
+      linear-gradient(160deg, var(--navy-deepest), var(--navy-deep) 60%, var(--navy));
+    display:flex; align-items:center; justify-content:center; flex-direction:column;
+    text-align:center; color:#fff; padding:30px;
+    transition:opacity .9s var(--ease), visibility .9s var(--ease);
+  }
+  #splash.hide{opacity:0; visibility:hidden; pointer-events:none;}
+  .splash-seal{
+    width:96px; height:96px; border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-size:30px; font-weight:800; color:var(--gold);
+    margin-bottom:26px;
+    box-shadow:0 0 0 6px rgba(212,175,55,0.08), 0 0 40px rgba(212,175,55,0.25);
+    opacity:0; transform:scale(.6);
+    animation: sealIn 1s var(--ease) .15s forwards, sealGlow 2.4s ease-in-out 1.2s infinite;
+    overflow:hidden;
+  }
+  .splash-seal img{
+    width:100%; height:100%; object-fit:contain; border-radius:50%; display:block;
+    background:transparent;
+  }
+  @keyframes sealIn{to{opacity:1; transform:scale(1);}}
+  @keyframes sealGlow{
+    0%,100%{box-shadow:0 0 0 6px rgba(212,175,55,0.08), 0 0 30px rgba(212,175,55,0.2);}
+    50%{box-shadow:0 0 0 10px rgba(212,175,55,0.14), 0 0 50px rgba(212,175,55,0.4);}
+  }
+  .splash-name{
+    font-family:var(--font-display); font-weight:800;
+    font-size:clamp(34px,6vw,58px);
+    letter-spacing:.5px;
+    opacity:0; transform:translateY(18px);
+    animation:fadeUp .9s var(--ease) .5s forwards;
+  }
+  .splash-name span{color:var(--gold);}
+  .splash-tagline{
+    margin-top:10px; font-size:14.5px; letter-spacing:4px; text-transform:uppercase;
+    color:var(--muted-light); opacity:0; transform:translateY(14px);
+    animation:fadeUp .9s var(--ease) .75s forwards;
+  }
+  .splash-quote{
+    margin-top:38px; max-width:480px; font-family:var(--font-display);
+    font-style:italic; font-size:18px; color:var(--cream-dim);
+    opacity:0; transform:translateY(14px);
+    animation:fadeUp .9s var(--ease) 1.05s forwards;
+    border-top:1px solid rgba(255,255,255,0.15); padding-top:22px;
+  }
+  .splash-quote small{
+    display:block; margin-top:10px; font-family:var(--font-body); font-style:normal;
+    font-size:12.5px; letter-spacing:2px; text-transform:uppercase; color:var(--gold);
+  }
+  .splash-bar{
+    margin-top:42px; width:220px; height:3px; border-radius:10px;
+    background:rgba(255,255,255,0.12); overflow:hidden;
+    opacity:0; animation:fadeUp .6s var(--ease) 1.3s forwards;
+  }
+  .splash-bar::after{
+    content:""; display:block; height:100%; width:0%;
+    background:linear-gradient(90deg, var(--gold), var(--gold-light));
+    animation:loadBar 2.1s var(--ease) 1.4s forwards;
+  }
+  @keyframes loadBar{to{width:100%;}}
+  @keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+  .splash-skip{
+    position:absolute; bottom:28px; right:28px; color:var(--muted-light);
+    font-size:13px; letter-spacing:1px; border:1px solid rgba(255,255,255,0.25);
+    padding:9px 18px; border-radius:100px; opacity:0;
+    animation:fadeUp .6s var(--ease) 1.6s forwards;
+  }
+  .splash-skip:hover{color:#fff; border-color:var(--gold);}
+
+  @media(prefers-reduced-motion: reduce){
+    .splash-seal, .splash-name, .splash-tagline, .splash-quote, .splash-bar, .splash-skip, .brand-name{animation:none !important; opacity:1 !important; transform:none !important;}
+  }
+
+  /* =====================================================================
+     3. NAVBAR
+     ===================================================================== */
+  #navbar{
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    padding:18px 0; transition:background .4s, padding .4s, box-shadow .4s;
+  }
+  #navbar.scrolled{
+    background:rgba(7,15,36,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    padding:12px 0; box-shadow:0 10px 30px -16px rgba(0,0,0,0.5);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; color:#fff; font-family:var(--font-display); font-weight:700; font-size:21px; white-space:nowrap;}
+  .brand-mark{
+    width:38px; height:38px; border-radius:50%; border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:800; font-size:15px;
+    flex-shrink:0; overflow:hidden;
+  }
+  .brand-mark img{width:100%; height:100%; object-fit:contain; border-radius:50%; display:block; background:transparent;}
+  .brand-name{
+    display:inline-block;
+    background:linear-gradient(105deg, #fff 20%, var(--gold-light) 43%, #fff 54%, var(--gold) 66%, #fff 82%);
+    background-size:240% 100%; background-position:100% 0;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:brandShimmer 5s ease-in-out infinite;
+  }
+  .brand-name > span{font-weight:800;}
+  @keyframes brandShimmer{0%,35%{background-position:100% 0;} 70%,100%{background-position:0 0;}}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{color:var(--muted-light); font-size:14.5px; font-weight:600; transition:color .25s; position:relative;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex; align-items:center; gap:16px;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; width:30px;}
+  .nav-toggle span{height:2px; background:#fff; border-radius:2px; transition:.3s;}
+
+  /* =====================================================================
+     4. HERO
+     ===================================================================== */
+  #hero{
+    min-height:100vh; display:flex; align-items:center; position:relative;
+    padding:140px 0 100px;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(212,175,55,0.16), transparent 40%),
+      radial-gradient(circle at 10% 90%, rgba(63,174,106,0.08), transparent 40%),
+      linear-gradient(150deg, var(--navy-deepest) 0%, var(--navy-deep) 45%, var(--navy) 100%);
+    overflow:hidden;
+  }
+  #hero::before{
+    content:""; position:absolute; inset:0; opacity:.05; pointer-events:none;
+    background-image:radial-gradient(circle, #fff 1px, transparent 1.4px);
+    background-size:26px 26px;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center; position:relative; z-index:2;}
+.hero-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(212,175,55,0.12); border:1px solid rgba(212,175,55,0.35);
+    color:var(--gold-light); padding:9px 18px; border-radius:100px; font-size:13px; font-weight:700;
+    letter-spacing:.4px; margin-bottom:24px;
+  }
+  #hero h1{
+    color:#ffefc2; font-size:clamp(36px,5.2vw,58px); letter-spacing:.2px;
+    text-shadow: 0 2px 25px rgba(0,0,0,0.6);
+  }
+  #hero h1 em{font-style:normal; color:#ffe68a; text-shadow:0 0 25px rgba(212,175,55,0.5), 0 2px 10px rgba(0,0,0,0.4);}
+  #hero p.lead{
+    color:#f4e6b8; font-size:18px; max-width:480px; margin:22px 0 34px;
+    font-weight:600; text-shadow:0 2px 12px rgba(0,0,0,0.5);
+  }
+  .hero-actions{display:flex; flex-wrap:wrap; gap:16px; margin-bottom:46px;}
+  .hero-trustrow{display:flex; flex-wrap:wrap; gap:28px;}
+  .hero-trustrow .ht-item{display:flex; align-items:center; gap:10px; color:var(--muted-light); font-size:15px; font-weight:700;}
+  .hero-trustrow .ht-item b{color:#fff; font-family:var(--font-display); font-size:24px; display:block;}
+
+  .hero-visual{position:relative;}
+  .hero-card{
+    background:var(--navy-glass);
+    border:1px solid rgba(255,255,255,0.14);
+    backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+    border-radius:var(--radius-lg);
+    padding:30px;
+    box-shadow:var(--shadow-soft);
+    position:relative;
+  }
+  .hero-card-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;}
+  .hero-card-top .tag{
+    background:var(--gold-soft); color:var(--gold-light); font-size:12px; font-weight:700;
+    padding:6px 12px; border-radius:100px; letter-spacing:.5px;
+  }
+  .hero-mini-stats{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px;}
+  .hero-mini-stats .mini{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+    border-radius:var(--radius-md); padding:16px;
+  }
+  .hero-mini-stats .mini b{display:block; color:var(--gold-light); font-family:var(--font-display); font-size:24px;}
+  .hero-mini-stats .mini span{color:var(--muted-light); font-size:12.5px;}
+  .hero-card-quote{
+    margin-top:20px; padding-top:18px; border-top:1px dashed rgba(255,255,255,0.18);
+    color:var(--muted-light); font-size:14px; font-style:italic;
+  }
+  .floaty{
+    position:absolute; border-radius:50%; filter:blur(2px); opacity:.5;
+    animation:floaty 7s ease-in-out infinite;
+  }
+  @keyframes floaty{0%,100%{transform:translateY(0);} 50%{transform:translateY(-16px);}}
+
+  /* =====================================================================
+     5. TRUST / WHY US
+     ===================================================================== */
+  #trust{background:var(--cream);}
+  .trust-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .trust-card{
+    background:#fff; border-radius:var(--radius-lg); padding:32px 26px;
+    border:1px solid #eee5cd; transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .trust-card:hover{transform:translateY(-8px); box-shadow:0 24px 50px -24px rgba(11,28,61,0.25);}
+  .trust-icon{
+    width:54px; height:54px; border-radius:14px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, var(--navy-deep), var(--navy-light)); font-size:24px; margin-bottom:18px;
+  }
+  .trust-card h3{font-size:18.5px; color:var(--navy-deep); margin-bottom:10px;}
+  .trust-card p{color:#5d6577; font-size:14.5px;}
+
+  /* =====================================================================
+     6. STATS COUNTER
+     ===================================================================== */
+  #stats{
+    background:linear-gradient(150deg, var(--navy-deepest), var(--navy));
+    color:#fff;
+  }
+  .stats-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:30px; text-align:center;}
+  .stat-num{font-family:var(--font-display); font-size:clamp(32px,5vw,48px); font-weight:800; color:var(--gold-light);}
+  .stat-label{margin-top:8px; color:var(--muted-light); font-size:14px; letter-spacing:.4px;}
+
+  /* =====================================================================
+     7. ABOUT / FOUNDER NOTE
+     ===================================================================== */
+  #about .about-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:60px; align-items:center;}
+  .about-photo{
+    position:relative; border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/3;
+    background:linear-gradient(160deg, var(--navy-light), var(--navy-deep));
+    display:flex; align-items:center; justify-content:center; color:var(--gold-light);
+    font-family:var(--font-display); font-size:18px; text-align:center; padding:30px;
+    border:1px solid #eee5cd;
+  }
+  .about-photo img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .about-photo .ph-badge{
+    position:absolute; bottom:18px; left:18px; right:18px;
+    background:rgba(7,15,36,0.7); backdrop-filter:blur(10px);
+    border-radius:var(--radius-md); padding:14px 18px; color:#fff; font-family:var(--font-body);
+  }
+  .about-photo .ph-badge b{display:block; font-family:var(--font-display); color:var(--gold-light); font-size:16px;}
+  .about-photo .ph-badge span{font-size:12.5px; color:var(--muted-light);}
+  .about-text h2{font-size:clamp(26px,4vw,38px); color:var(--navy-deep); margin-bottom:18px;}
+  .about-text p{color:#525b6e; margin-bottom:16px; font-size:15.5px;}
+  .about-points{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:24px;}
+  .about-points li{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#3a4257; font-weight:600;}
+  .about-points li::before{content:"✓"; color:var(--success); font-weight:800; flex-shrink:0;}
+
+  /* =====================================================================
+     8. TEACHERS
+     ===================================================================== */
+  #teachers{background:var(--cream-dim);}
+  .teacher-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .teacher-card{
+    background:#fff; border-radius:var(--radius-lg); overflow:hidden; cursor:pointer;
+    border:1px solid #eee5cd; transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .teacher-card:hover{transform:translateY(-8px); box-shadow:0 24px 50px -24px rgba(11,28,61,0.25);}
+.teacher-photo{
+    aspect-ratio:1/1; background:linear-gradient(150deg, var(--navy-light), var(--navy-deep));
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-display);
+    font-size:40px; color:var(--gold-light); font-weight:700; position:relative;
+    overflow:hidden;
+  }
+  .teacher-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:top center;
+    display:block; transition:transform .5s var(--ease);
+  }
+  .teacher-card:hover .teacher-photo img{transform:scale(1.06);}
+  .teacher-photo .view-tag{
+    position:absolute; bottom:10px; right:10px; background:rgba(255,255,255,0.92); color:var(--navy-deep);
+    font-size:11px; font-weight:700; padding:6px 12px; border-radius:100px; letter-spacing:.3px;
+    z-index:2;
+  }
+  .teacher-info{padding:20px;}
+  .teacher-info h3{font-size:17px; color:var(--navy-deep);}
+  .teacher-info .role{color:#b8942e; font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin:4px 0 6px;}
+  .teacher-info .qualification{font-size:13.5px; color:#3d4557; font-weight:600; margin-bottom:4px;}
+  .teacher-info .experience{font-size:12.5px; color:#525b6e; display:flex; align-items:center; gap:6px; margin-top:4px;}
+.teacher-info p{font-size:13.5px; color:#4a5270;}
+
+  /* =====================================================================
+     8b. TRAVELLING FACULTY / TEAM OF TRIMENTORS
+     ===================================================================== */
+  #travelling-faculty{background:var(--cream);}
+  .tf-note{
+    display:flex; align-items:center; gap:10px; justify-content:center;
+    background:var(--cream-dim); border:1px solid #eee5cd; border-radius:100px;
+    color:#5a6378; font-size:13.5px; padding:10px 20px; margin-bottom:34px;
+  }
+  .tf-note::before{content:"🚗";}
+  .tf-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .tf-card{
+    background:#fff; border-radius:var(--radius-lg); padding:28px 26px;
+    border:1px solid #eee5cd; position:relative; overflow:hidden;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .tf-card::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:4px;
+    background:linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+  .tf-card:hover{transform:translateY(-6px); box-shadow:0 24px 50px -24px rgba(11,28,61,0.25);}
+  .tf-initials{
+    width:52px; height:52px; border-radius:14px; margin-bottom:16px;
+    background:linear-gradient(135deg, var(--navy-deep), var(--navy-light));
+    color:var(--gold-light); font-family:var(--font-display); font-weight:800; font-size:18px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .tf-card h3{font-size:18px; color:var(--navy-deep); margin-bottom:4px;}
+  .tf-qual{font-size:13px; color:#3d4557; font-weight:600; margin-bottom:8px; line-height:1.5;}
+  .tf-exp{
+    display:flex; gap:8px; align-items:center; font-size:12.5px; color:#8a6d10;
+    background:var(--gold-soft); padding:6px 12px; border-radius:100px; width:fit-content;
+    font-weight:700; margin-bottom:10px;
+  }
+  .tf-subjects{font-size:13px; color:#525b6e; line-height:1.5;}
+
+  /* =====================================================================
+     9. PHOTO GALLERY
+     ===================================================================== */
+  #gallery{background:var(--cream-dim);}
+  .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; grid-auto-rows:215px;}
+  .gallery-item{
+    position:relative; border-radius:var(--radius-md); overflow:hidden; cursor:pointer;
+    background:linear-gradient(150deg, var(--navy-light), var(--navy-deep));
+    border:1px solid #eee5cd;
+  }
+  .gallery-item.tall{grid-row:span 2;}
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .6s var(--ease);
+  }
+  .gallery-item:hover img{transform:scale(1.08);}
+  .gallery-item .g-overlay{
+    position:absolute; inset:0; background:linear-gradient(to top, rgba(7,15,36,0.88) 0%, rgba(7,15,36,0.18) 55%, transparent 100%);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:18px;
+    opacity:0; transition:opacity .4s var(--ease);
+  }
+  .gallery-item:hover .g-overlay{opacity:1;}
+  .gallery-item .g-cat{
+    align-self:flex-start; background:var(--gold); color:var(--navy-deepest); font-size:10.5px; font-weight:800;
+    padding:4px 10px; border-radius:100px; letter-spacing:.5px; text-transform:uppercase; margin-bottom:8px;
+  }
+  .gallery-item .g-title{color:#fff; font-family:var(--font-display); font-size:17px; font-weight:700;}
+  .gallery-item .g-sub{color:var(--muted-light); font-size:12.5px; margin-top:2px;}
+  .gallery-item .g-zoom{
+    position:absolute; top:14px; right:14px; width:34px; height:34px; border-radius:50%;
+    background:rgba(255,255,255,0.14); backdrop-filter:blur(6px); color:#fff; font-size:14px;
+    display:flex; align-items:center; justify-content:center; opacity:0; transform:scale(.6); transition:.35s var(--ease);
+  }
+  .gallery-item:hover .g-zoom{opacity:1; transform:scale(1);}
+  .gallery-item.placeholder .g-ph{
+    height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:var(--gold-light); text-align:center; padding:20px;
+  }
+  .gallery-item.placeholder .g-ph .g-ph-icon{font-size:30px;}
+  .gallery-item.placeholder .g-ph .g-ph-name{font-family:var(--font-display); font-size:15px; font-weight:700;}
+  .gallery-item.placeholder .g-ph .g-ph-hint{font-size:11.5px; color:var(--muted-light); font-family:var(--font-body); font-weight:500;}
+  .gallery-item.placeholder.has-img .g-ph{display:none;}
+  .gallery-cta{
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    background:linear-gradient(150deg, var(--navy-deep), var(--navy-deepest));
+    border:1px solid rgba(212,175,55,0.3); color:#fff; padding:26px;
+  }
+  .gallery-cta h3{font-size:19px; color:#fff; margin-bottom:10px;}
+  .gallery-cta p{color:var(--muted-light); font-size:13px; margin-bottom:16px;}
+
+  /* =====================================================================
+     10b. VIDEO TESTIMONIALS
+     ===================================================================== */
+  #video-testimonials{background:var(--cream);}
+  .video-wrap{max-width:860px; margin:0 auto;}
+  .video-stage{
+
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+    backdrop-filter:blur(14px); border-radius:var(--radius-lg); padding:38px; text-align:center;
+  }
+  .testi-stars{color:var(--gold-light); letter-spacing:3px; font-size:16px; margin-bottom:18px;}
+  .testi-quote{font-family:var(--font-display); font-size:19px; font-style:italic; color:#f1f0ea;}
+  .testi-person{margin-top:22px; display:flex; align-items:center; justify-content:center; gap:12px;}
+  .testi-avatar{
+    width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--gold-light));
+    display:flex; align-items:center; justify-content:center; color:var(--navy-deepest); font-weight:800;
+  }
+  .testi-person b{display:block; font-size:14.5px;}
+  .testi-person span{font-size:12.5px; color:var(--muted-light);}
+  .testi-nav{display:flex; justify-content:center; gap:12px; margin-top:30px;}
+  .testi-dot{width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.3); transition:.3s;}
+  .testi-dot.active{background:var(--gold); width:22px; border-radius:6px;}
+  .testi-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); width:42px; height:42px; border-radius:50%;
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); color:#fff; font-size:18px;
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .testi-arrow:hover{background:var(--gold); color:var(--navy-deepest);}
+  .testi-arrow.prev{left:-58px;}
+  .testi-arrow.next{right:-58px;}
+
+  /* =====================================================================
+     10b. VIDEO TESTIMONIALS
+     ===================================================================== */
+  #video-testimonials{background:var(--cream);}
+  .video-wrap{max-width:860px; margin:0 auto;}
+  .video-stage{
+    border-radius:var(--radius-lg); overflow:hidden; position:relative;
+    border:1px solid rgba(212,175,55,0.35);
+    box-shadow:0 30px 80px -30px rgba(7,15,36,0.55);
+    background:#000;
+  }
+.video-stage video{
+    width:100%; height:auto; display:block; object-fit:contain; background:#000;
+  }
+  .video-fallback{
+    display:none; text-align:center; padding:70px 30px; color:#fff;
+    background:linear-gradient(150deg, var(--navy-deepest), var(--navy));
+  }
+  .video-fallback.show{display:block;}
+  .video-fallback .vf-icon{font-size:46px; margin-bottom:16px;}
+  .video-fallback h3{font-family:var(--font-display); font-size:22px; color:#fff; margin-bottom:10px;}
+  .video-fallback p{color:var(--muted-light); font-size:14.5px; max-width:430px; margin:0 auto 8px;}
+  .video-fallback code{background:rgba(212,175,55,0.15); color:var(--gold-light); padding:3px 10px; border-radius:6px; font-size:13px;}
+  .video-note{
+    display:flex; align-items:center; gap:10px; justify-content:center;
+    margin-top:18px; color:#5a6378; font-size:13.5px;
+  }
+  .video-note::before{content:"📣";}
+
+  /* =====================================================================
+     11. MAP / LOCATION
+     ===================================================================== */
+  #location{background:var(--cream-dim);}
+  .loc-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:0; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-soft);}
+  .loc-info{
+    background:linear-gradient(160deg, var(--navy-deep), var(--navy-deepest));
+    color:#fff; padding:48px 40px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .loc-info h3{font-size:26px; margin-bottom:16px;}
+  .loc-info .addr{
+    display:flex; gap:14px; align-items:flex-start; color:var(--muted-light); font-size:15px; margin-bottom:22px;
+  }
+  .loc-info .addr b{color:#fff; display:block; margin-bottom:4px;}
+  .loc-list li{display:flex; gap:12px; align-items:flex-start; color:var(--muted-light); font-size:14.5px; margin-bottom:12px;}
+  .loc-list li::before{content:"📍"; flex-shrink:0;}
+  .loc-info .btn{margin-top:14px; align-self:flex-start;}
+  .map-frame{min-height:420px; position:relative;}
+  .map-frame iframe{width:100%; height:100%; min-height:420px; border:0; filter:saturate(1.05);}
+
+  /* =====================================================================
+     12. CONTACT
+     ===================================================================== */
+  #contact{background:var(--cream);}
+  .contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:50px;}
+  .contact-card{
+    background:linear-gradient(160deg, var(--navy-deep), var(--navy-deepest)); color:#fff;
+    border-radius:var(--radius-lg); padding:40px; height:fit-content;
+  }
+  .contact-card h3{font-size:22px; margin-bottom:14px;}
+  .contact-card p{color:var(--muted-light); font-size:14.5px; margin-bottom:26px;}
+  .contact-row{display:flex; gap:14px; align-items:center; margin-bottom:18px; font-size:14.5px;}
+  .contact-row .ci{
+    width:40px; height:40px; border-radius:10px; background:rgba(212,175,55,0.15); color:var(--gold-light);
+    display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0;
+  }
+  .contact-form{
+    background:#fff; border-radius:var(--radius-lg); padding:40px; border:1px solid #eee5cd;
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;}
+  .form-group{display:flex; flex-direction:column; gap:7px;}
+  .form-group label{font-size:13px; font-weight:700; color:var(--navy-deep);}
+  .form-group input, .form-group select, .form-group textarea{
+    padding:13px 15px; border-radius:var(--radius-sm); border:1.5px solid #e4ddc6; font-family:inherit; font-size:14.5px;
+    background:#fcfaf3; transition:border .25s, box-shadow .25s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
+    outline:none; border-color:var(--gold); box-shadow:0 0 0 4px var(--gold-soft);
+  }
+  .form-group.full{grid-column:1/-1;}
+  #contactForm button{width:100%; margin-top:6px;}
+  .form-success{
+    display:none; align-items:center; gap:12px; background:#eafaf0; border:1px solid #bfe9cf; color:#1f6b41;
+    padding:14px 18px; border-radius:var(--radius-sm); font-size:14px; font-weight:600; margin-top:16px;
+  }
+  .form-success.show{display:flex;}
+
+  /* =====================================================================
+     13. FOOTER
+     ===================================================================== */
+  footer{background:var(--navy-deepest); color:var(--muted-light); padding:60px 0 24px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-brand{color:#fff; font-family:var(--font-display); font-size:21px; font-weight:700; margin-bottom:14px;}
+  .footer-brand span{color:var(--gold);}
+  .footer-grid p{font-size:13.5px; line-height:1.7;}
+  .footer-grid h4{color:#fff; font-size:14.5px; margin-bottom:16px; letter-spacing:.5px;}
+  .footer-grid ul li{margin-bottom:10px; font-size:13.5px;}
+  .footer-grid ul li a:hover{color:var(--gold-light);}
+  .footer-social{display:flex; gap:10px; margin-top:16px;}
+  .footer-social a{
+    width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.18);
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .footer-social a:hover{background:var(--gold); color:var(--navy-deepest); border-color:var(--gold);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; padding-top:22px; font-size:12.5px; flex-wrap:wrap; gap:10px;
+  }
+
+  /* =====================================================================
+     14. FLOATING WHATSAPP
+     ===================================================================== */
+  #whatsapp-btn{
+    position:fixed; bottom:26px; right:26px; z-index:400;
+    width:60px; height:60px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -8px rgba(37,211,102,0.6); font-size:28px;
+    animation:pulseWa 2.6s infinite;
+  }
+  #whatsapp-btn:hover{transform:scale(1.08);}
+  @keyframes pulseWa{
+    0%{box-shadow:0 14px 30px -8px rgba(37,211,102,0.6), 0 0 0 0 rgba(37,211,102,0.5);}
+    70%{box-shadow:0 14px 30px -8px rgba(37,211,102,0.6), 0 0 0 16px rgba(37,211,102,0);}
+    100%{box-shadow:0 14px 30px -8px rgba(37,211,102,0.6), 0 0 0 0 rgba(37,211,102,0);}
+  }
+
+  /* =====================================================================
+     15. MODALS (Admission + Teacher profile)
+     ===================================================================== */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(7,15,36,0.72); backdrop-filter:blur(6px);
+    display:flex; align-items:center; justify-content:center; z-index:800; padding:20px;
+    opacity:0; visibility:hidden; transition:.35s var(--ease);
+  }
+  .modal-overlay.open{opacity:1; visibility:visible;}
+  .modal-box{
+    background:#fff; border-radius:var(--radius-lg); max-width:520px; width:100%; padding:38px;
+    position:relative; transform:translateY(18px) scale(.97); transition:.4s var(--ease); max-height:88vh; overflow-y:auto;
+  }
+  .modal-overlay.open .modal-box{transform:translateY(0) scale(1);}
+  .modal-close{
+    position:absolute; top:18px; right:18px; width:34px; height:34px; border-radius:50%;
+    background:#f4f1e8; display:flex; align-items:center; justify-content:center; font-size:16px; color:#444;
+    transition:.25s;
+  }
+  .modal-close:hover{background:var(--gold); color:#fff;}
+
+  .admission-modal .ribbon{
+    display:inline-block; background:var(--gold-soft); color:#8a6d10; font-size:11.5px; font-weight:800;
+    padding:6px 14px; border-radius:100px; letter-spacing:.5px; margin-bottom:14px;
+  }
+  .admission-modal h3{font-size:24px; color:var(--navy-deep); margin-bottom:10px;}
+  .admission-modal p{color:#5a6378; font-size:14.5px; margin-bottom:20px;}
+  .admission-perks{margin-bottom:24px;}
+  .admission-perks li{display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#3a4257; margin-bottom:10px; font-weight:600;}
+  .admission-perks li::before{content:"★"; color:var(--gold);}
+
+  .teacher-modal-photo{
+    aspect-ratio:3/4; border-radius:var(--radius-md); background:linear-gradient(150deg, var(--navy-light), var(--navy-deep));
+    display:flex; align-items:center; justify-content:center; color:var(--gold-light); font-family:var(--font-display);
+    font-size:34px; font-weight:700; margin-bottom:20px; overflow:hidden; position:relative;
+  }
+  .teacher-modal-photo img{
+    width:100%; height:100%; object-fit:contain; object-position:top center; display:block;
+  }
+  .teacher-modal h3{font-size:22px; color:var(--navy-deep);}
+  .teacher-modal .role{color:var(--gold); font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.5px; margin:6px 0 16px;}
+  .teacher-modal-tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .teacher-modal-tags span{background:var(--cream-dim); color:var(--navy-deep); font-size:12px; font-weight:700; padding:6px 12px; border-radius:100px;}
+  .teacher-modal p{color:#5a6378; font-size:14.5px; margin-bottom:10px;}
+
+  /* =====================================================================
+     15b. GALLERY LIGHTBOX
+     ===================================================================== */
+  .lightbox{
+    position:fixed; inset:0; z-index:900; background:rgba(7,15,36,0.94); backdrop-filter:blur(8px);
+    display:flex; align-items:center; justify-content:center; flex-direction:column;
+    opacity:0; visibility:hidden; transition:.35s var(--ease); padding:20px;
+  }
+  .lightbox.open{opacity:1; visibility:visible;}
+  .lightbox-figure{max-width:min(960px,92vw); max-height:84vh; display:flex; flex-direction:column; align-items:center;}
+  .lightbox-figure img{
+    max-width:100%; max-height:70vh; object-fit:contain; border-radius:var(--radius-md);
+    box-shadow:0 30px 80px -20px rgba(0,0,0,0.7);
+    transform:scale(.96); transition:.35s var(--ease);
+  }
+  .lightbox.open .lightbox-figure img{transform:scale(1);}
+  .lightbox-caption{color:#fff; text-align:center; margin-top:16px;}
+  .lightbox-caption b{font-family:var(--font-display); font-size:18px;}
+  .lightbox-caption span{display:block; color:var(--muted-light); font-size:13px; margin-top:4px;}
+  .lightbox-counter{color:var(--gold-light); font-size:13px; letter-spacing:1px; margin-top:8px;}
+  .lightbox-btn{
+    position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22); color:#fff; font-size:22px;
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .lightbox-btn:hover{background:var(--gold); color:var(--navy-deepest);}
+  .lightbox-btn.prev{left:22px;}
+  .lightbox-btn.next{right:22px;}
+  .lightbox-close{
+    position:absolute; top:22px; right:22px; width:44px; height:44px; border-radius:50%;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22); color:#fff; font-size:17px;
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .lightbox-close:hover{background:var(--gold); color:var(--navy-deepest);}
+  .lightbox-empty{color:var(--muted-light); text-align:center; font-size:15px; max-width:400px;}
+  .lightbox-empty b{color:#fff; font-family:var(--font-display); font-size:20px; display:block; margin-bottom:8px;}
+
+  /* =====================================================================
+     16. RESPONSIVE
+     ===================================================================== */
+  @media(max-width:1000px){
+    .hero-grid, .about-grid, .loc-grid, .contact-grid{grid-template-columns:1fr; gap:36px;}
+    .trust-grid, .teacher-grid, .tf-grid, .gallery-grid{grid-template-columns:repeat(2, minmax(0,1fr));}
+    .stats-grid{grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px;}
+    .footer-grid{grid-template-columns:1fr 1fr; row-gap:30px;}
+    .testi-arrow{display:none;}
+  }
+  @media(max-width:1150px){
+    .nav-links{
+      position:fixed; top:0; right:0; height:100vh; width:78%; max-width:320px;
+      background:var(--navy-deepest); flex-direction:column; align-items:flex-start; justify-content:center;
+      padding:40px; gap:26px; transform:translateX(100%); transition:.4s var(--ease); z-index:600;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{display:flex; flex-shrink:0;}
+    .nav-cta .btn-outline{display:none;}
+  }
+  @media(max-width:720px){
+    .nav-cta .btn-gold{padding:10px 16px !important; font-size:12.5px !important;}
+    section{padding:64px 0;}
+    .container{padding:0 20px;}
+    .tf-note{border-radius:var(--radius-md); text-align:center; align-items:flex-start;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column; text-align:center;}
+    #about .about-photo{min-height:360px; aspect-ratio:auto;}
+  }
+  @media(max-width:560px){
+    #about .about-photo{min-height:320px;}
+
+    .brand{font-size:18px; gap:8px;}
+    .brand-mark{width:34px; height:34px;}
+    .nav-cta .btn-gold{padding:9px 12px !important; font-size:12px !important;}
+    .trust-grid, .teacher-grid, .tf-grid, .gallery-grid, .stats-grid{grid-template-columns:1fr;}
+    .stats-grid{row-gap:28px;}
+    .hero-actions .btn{width:100%;}
+    .hero-card{padding:22px 18px;}
+    .hero-mini-stats{gap:10px;}
+    .hero-mini-stats .mini{padding:13px 10px;}
+    .hero-mini-stats .mini b{font-size:21px;}
+    .contact-card, .contact-form, .modal-box{padding:26px 20px;}
+    .gallery-grid{grid-auto-rows:200px;}
+    .gallery-item.tall{grid-row:span 1;}
+    .lightbox-btn{width:40px; height:40px; font-size:18px;}
+    .lightbox-btn.prev{left:6px;}
+    .lightbox-btn.next{right:6px;}
+    .lightbox-close{top:12px; right:12px;}
+  }
+  @media(max-width:380px){
+    .nav-cta .btn-gold{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     SPLASH / WELCOME SCREEN
+     ===================================================================== -->
+<div id="splash">
+  <div class="splash-seal"><img src="logotut.png" alt="TriMentor Academy Logo"></div>
+  <h1 class="splash-name">TriMentor <span>Academy</span></h1>
+  <p class="splash-tagline">From Basics to Brilliance!</p>
+  <p class="splash-quote">
+    "Success is not final, failure is not fatal: it is the courage to continue that counts."
+    <small>— Winston Churchill</small>
+  </p>
+  <div class="splash-bar"></div>
+  <button class="splash-skip" id="splashSkip">Enter Site →</button>
+</div>
+
+<!-- =====================================================================
+     NAVBAR
+     ===================================================================== -->
+<header id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand">
+      <span class="brand-mark"><img src="logotut.png" alt="TriMentor Academy Logo"></span>
+      <span class="brand-name">TriMentor <span>Academy</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About Us</a>
+      <a href="#teachers">Faculty</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#video-testimonials">Videos</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#location" class="btn btn-outline" style="padding:11px 20px; font-size:13.5px;">Visit Centre</a>
+      <button class="btn btn-gold" style="padding:11px 22px; font-size:13.5px;" onclick="openAdmissionModal()">Enquire Now</button>
+      <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- =====================================================================
+     HERO
+     ===================================================================== -->
+<section id="hero">
+  <div class="floaty" style="width:120px; height:120px; background:radial-gradient(circle, rgba(212,175,55,.4), transparent 70%); top:18%; right:8%;"></div>
+  <div class="floaty" style="width:80px; height:80px; background:radial-gradient(circle, rgba(63,174,106,.3), transparent 70%); bottom:14%; left:6%; animation-delay:1.5s;"></div>
+  <div class="container hero-grid">
+    <div class="reveal in-view">
+      <div class="hero-badge">🏅 Grades 6–10 | CBSE & ICSE</div>
+      <h1>Excellence in <em>Academics</em>,<br>From Basics to Brilliance!</h1>
+      <p class="lead">TriMentor Academy provides expert teaching, regular assessments, personalized attention and board-exam success strategies for CBSE & ICSE students in Thane.</p>
+      <div class="hero-actions">
+        <button class="btn btn-gold" onclick="openAdmissionModal()">📋 Book a Free Demo Class</button>
+        <a href="#location" class="btn btn-outline">📍 Visit Our Centre</a>
+      </div>
+      <div class="hero-trustrow">
+        <div class="ht-item"><b>Expert</b> Faculty</div>
+        <div class="ht-item"><b>3</b> Expert Teachers</div>
+        <div class="ht-item"><b>200+</b> Success Stories</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal in-view">
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <strong style="color:#fff; font-family:var(--font-display); font-size:18px;">This Month at a Glance</strong>
+          <span class="tag">Live</span>
+        </div>
+        <div class="hero-mini-stats">
+          <div class="mini"><b>34 yrs</b><span>Top Teaching Experience</span></div>
+          <div class="mini"><b>13+</b><span>Experienced Educators</span></div>
+          <div class="mini"><b>Grades 6–10</b><span>Focused Learning</span></div>
+          <div class="mini"><b>CBSE & ICSE</b><span>Specialist Centre</span></div>
+        </div>
+        <div class="hero-card-quote">"My son's board exam score went from 78% to 92% in just one year at TriMentor. The personalized attention made all the difference." </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     TRUST / WHY PARENTS CHOOSE US
+     ===================================================================== -->
+<section id="trust">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our USPs</div>
+      <h2>Why TriMentor Academy Stands Apart</h2>
+      <p>Our commitment to concept clarity, expert teaching, and personalized success has made us Thane's most trusted coaching centre for grades 6–10.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-icon">💡</div>
+        <h3>Concept Clarity</h3>
+        <p>Deep conceptual understanding instead of rote learning. Our focus builds lasting knowledge for board exam success.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon">👨‍🏫</div>
+        <h3>Expert Teaching</h3>
+        <p>Experienced faculty with proven board exam track records. Every teacher brings passion and subject mastery to the classroom.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon">📈</div>
+        <h3>Regular Assessments</h3>
+        <p>Weekly tests and mock papers help track progress. Regular feedback enables course corrections and targeted improvement.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-icon">🎯</div>
+        <h3>Personalized Attention</h3>
+        <p>Small batches with individual learning plans. Every student receives the support they need to excel at their own pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     STATS COUNTERS
+     ===================================================================== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid" id="statsGrid">
+      <div>
+        <div class="stat-num" data-count="7">0</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div>
+        <div class="stat-num" data-count="200" data-suffix="+">0</div>
+        <div class="stat-label">Students Mentored &amp; Counting</div>
+      </div>
+      <div>
+        <div class="stat-num" data-count="3">0</div>
+        <div class="stat-label">Expert Teachers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     ABOUT
+     ===================================================================== -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-photo reveal">
+      <img src="4.JPG" alt="TriMentor Academy classes at Lodha Splendora, Thane" />
+      <div class="ph-badge">
+        <b>TriMentor Academy</b>
+        <span>Grades 6–10 | CBSE & ICSE</span>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="eyebrow">About TriMentor Academy</div>
+      <h2>Building Concept Clarity, Ensuring Success</h2>
+      <p>TriMentor Academy is committed to helping students from grades 6–10 master CBSE and ICSE curricula with confidence and clarity.</p>
+      <p>We provide expert teaching, regular assessments, and personalized attention to ensure every student achieves their best. Our success-focused approach has helped hundreds of students excel in their board exams.</p>
+      <ul class="about-points">
+        <li>Concept clarity sessions</li>
+        <li>Expert subject teaching</li>
+        <li>Regular progress assessments</li>
+        <li>Personalized learning plans</li>
+        <li>Board exam preparation</li>
+        <li>Small batch classes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     TEACHERS
+     ===================================================================== -->
+<section id="teachers">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Meet Our Faculty</div>
+      <h2>Expert Teachers Dedicated to Your Success</h2>
+      <p>Our experienced faculty brings passion and expertise to every class. Join students who are thriving under their guidance.</p>
+    </div>
+<div class="teacher-grid" id="teacherGrid"></div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     TRAVELLING FACULTY / TEAM OF TRIMENTORS
+     ===================================================================== -->
+<section id="travelling-faculty">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Travelling Faculty</div>
+      <h2>The Team of TriMentors</h2>
+      <p>Our dedicated travelling faculty brings expert, subject-specific teaching to students across the region — seasoned educators with decades of combined experience.</p>
+    </div>
+    <div class="tf-note reveal">Our expert travelling faculty conducts classes on-site, bringing quality education closer to every student.</div>
+    <div class="tf-grid" id="tfGrid"></div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     PHOTO GALLERY
+     ===================================================================== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Life at TriMentor</div>
+      <h2>Inside Our Classrooms & Beyond</h2>
+      <p>Moments from our classes, activities and celebrations that make TriMentor Academy a second home for learning.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     VIDEO TESTIMONIALS
+     ===================================================================== -->
+<section id="video-testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Watch & Believe</div>
+      <h2>Hear From Our Parents</h2>
+      <p>Nothing speaks louder than our parents. Press play to hear their TriMentor journey in their own words.</p>
+    </div>
+    <div class="video-wrap reveal">
+      <div class="video-stage">
+<video id="parentVideo" controls playsinline preload="metadata">
+          <source src="videotrimentors-compressed.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-fallback" id="videoFallback">
+<div class="vf-icon">🎬</div>
+          <h3>Parent Review Video Coming Soon</h3>
+          <p>Drop your video file named</p>
+          <p><code>videotrimentors.mp4</code></p>
+          <p>in the same folder as <code>index.html</code> and it will play here automatically.</p>
+        </div>
+      </div>
+      <div class="video-note">Short parent testimonial videos, classes in action, and student success stories — all in one place.</div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     MAP / LOCATION — LODHA SPLENDORA, THANE
+     ===================================================================== -->
+<section id="location">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Visit Our Centre</div>
+      <h2>TriMentor Academy at Lodha Splendora, Thane</h2>
+      <p>Located in a secure, gated community with easy access and ample parking. Right where your child deserves to be.</p>
+    </div>
+    <div class="loc-grid reveal">
+      <div class="loc-info">
+        <h3>TriMentor Academy</h3>
+        <div class="addr">
+          <span>📍</span>
+          <div>
+            <b>Our Address</b>
+            Ignis D, 0004, Lodha Splendora,<br>G.B. Road, Thane
+          </div>
+        </div>
+        <ul class="loc-list">
+          <li>Located at prestigious Lodha Splendora gated community</li>
+          <li>Easy access from G.B. Road with ample parking</li>
+          <li>Safe, secure learning environment</li>
+        </ul>
+        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Ignis+D+Lodha+Splendora+GB+Road+Thane" target="_blank" rel="noopener">Get Directions →</a>
+      </div>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=Ignis+D+Lodha+Splendora+G.B.+Road+Thane&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="TriMentor Academy Location - Lodha Splendora, Thane">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     CONTACT
+     ===================================================================== -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="contact-card reveal">
+      <h3>Get in Touch with TriMentor Academy</h3>
+      <p>Questions about admissions, batch timings, or fees? Contact us — we respond promptly to all enquiries.</p>
+      <div class="contact-row"><span class="ci">📍</span> Ignis D, Lodha Splendora, Thane</div>
+      <div class="contact-row"><span class="ci">📱</span> Jayashree Mishra: +91 86522 57033</div>
+      <div class="contact-row"><span class="ci">📱</span> Shamaita Banerjee: +91 98315 66685</div>
+      <div class="contact-row"><span class="ci">📱</span> Priyesh Kunnath: +91 97699 53027</div>
+      <div class="contact-row"><span class="ci"></span> Mon – Sat, 4:00 PM – 8:00 PM</div>
+      <div class="contact-socials">
+        <a class="btn btn-gold" href="https://www.instagram.com/trimentors_academy" target="_blank" rel="noopener" style="width:100%; margin-bottom:10px;">📷 Follow on Instagram</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/trimentors-academy-a09bb2427" target="_blank" rel="noopener" style="width:100%; border-color:rgba(212,175,55,0.5); color:var(--gold-light);">💼 Connect on LinkedIn</a>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Parent's Name</label>
+            <input type="text" name="parentName" placeholder="Your full name" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="+91 00000 00000" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Child's Grade</label>
+            <select name="grade" required>
+              <option value="">Select grade</option>
+              <option>Grade 6</option>
+              <option>Grade 7</option>
+              <option>Grade 8</option>
+              <option>Grade 9</option>
+              <option>Grade 10</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Subject of Interest</label>
+            <select name="subject" required>
+              <option value="">Select subject</option>
+              <option>Mathematics</option>
+              <option>Science</option>
+              <option>English</option>
+              <option>Social Studies</option>
+              <option>All Subjects</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full" style="margin-bottom:18px;">
+          <label>Message (optional)</label>
+          <textarea name="message" rows="3" placeholder="Tell us a bit about your child's needs..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-navy">Send Enquiry on WhatsApp</button>
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">✅ Thank you! We've received your request and will call you back shortly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     FOOTER
+     ===================================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TriMentor <span>Academy</span></div>
+        <p>From Basics to Brilliance! Located at Lodha Splendora, Thane. Excellence in academics for grades 6–10, CBSE & ICSE boards.</p>
+<div class="footer-social">
+          <a href="https://www.instagram.com/trimentors_academy" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://www.linkedin.com/in/trimentors-academy-a09bb2427" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+<a href="https://wa.me/918652257033" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#teachers">Our Faculty</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#video-testimonials">Videos</a></li>
+          <li><a href="#contact">Admissions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#">Grade 6 Foundation</a></li>
+          <li><a href="#">Grade 7 – 8 Builders</a></li>
+          <li><a href="#">Grade 9 – 10 Board Prep</a></li>
+          <li><a href="#">CBSE & ICSE Coaching</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Ignis D, Lodha Splendora, Thane</li>
+          <li>Jayashree Mishra: +91 86522 57033</li>
+          <li>Shamaita Banerjee: +91 98315 66685</li>
+          <li>Priyesh Kunnath: +91 97699 53027</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TriMentor Academy. All rights reserved. From Basics to Brilliance!</span>
+      <span>Admissions Open for 2026–27 | Grades 6–10 | CBSE & ICSE</span>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     FLOATING WHATSAPP BUTTON
+     ===================================================================== -->
+<a id="whatsapp-btn" href="https://wa.me/918652257033?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20TriMentor%20Academy%20admissions" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- =====================================================================
+     ADMISSION MODAL
+     ===================================================================== -->
+<div class="modal-overlay" id="admissionModal">
+  <div class="modal-box admission-modal">
+    <div class="modal-close" onclick="closeAdmissionModal()">✕</div>
+    <span class="ribbon">🎓 Admissions Open 2026–27</span>
+    <h3>Book a Free Demo Class at TriMentor</h3>
+    <p>Join our success-focused learning community. Grades 6–10, CBSE & ICSE — no commitment required.</p>
+    <ul class="admission-perks">
+      <li>Free trial class in your subject</li>
+      <li>Personalized learning assessment</li>
+      <li>Meet our expert faculty first</li>
+      <li>Admissions open for 2026–27</li>
+    </ul>
+    <button class="btn btn-gold" style="width:100%;" onclick="closeAdmissionModal(); document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Claim Your Free Demo Class →</button>
+  </div>
+</div>
+
+<!-- =====================================================================
+     TEACHER PROFILE MODAL
+     ===================================================================== -->
+<div class="modal-overlay" id="teacherModal">
+  <div class="modal-box teacher-modal" id="teacherModalContent"></div>
+</div>
+
+<!-- =====================================================================
+     GALLERY LIGHTBOX
+     ===================================================================== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <button class="lightbox-btn prev" id="lightboxPrev" aria-label="Previous">‹</button>
+  <button class="lightbox-btn next" id="lightboxNext" aria-label="Next">›</button>
+  <div class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="Gallery photo">
+    <div class="lightbox-caption">
+      <b id="lightboxTitle"></b>
+      <span id="lightboxSub"></span>
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+</div>
+
+
+<script>
+/* =========================================================================
+   DATA — edit the arrays below to change content shown on the page
+   ========================================================================= */
+
+// ---- TEACHERS DATA ----
+const teachers = [
+  {
+    photo:"1.jpeg",
+    initials:"JM",
+    name:"Mrs. Jayashree Mishra",
+    role:"Science & Chemistry Faculty",
+    qualification:"M.Sc. Chemistry, B.Ed.",
+    experience:"12+ years teaching Science & Chemistry",
+    tags:["Chemistry","Maths","Biology","Board Prep"],
+    bio:"Mrs. Jayashree Mishra is a dedicated Science educator who turns every topic into a fun, memorable discovery. Her hands-on teaching approach, regular assessments, and exam-focused strategies ensure students truly understand and excel in all branches of Science."
+  },
+  {
+    photo:"2.jpeg",
+    initials:"PK",
+    name:"Mr. Priyesh Kunnat",
+    role:"Mathematics Faculty",
+    qualification:"M.Sc. Mathematics, B.Ed.",
+    experience:"10+ years teaching Mathematics for CBSE & ICSE",
+    tags:["Maths","Physics"],
+    bio:"Mr. Priyesh Kunnat is a passionate Mathematics educator who makes complex concepts simple and approachable. With a strong focus on conceptual clarity and problem-solving speed, he has helped countless students secure top scores in their board examinations."
+  },
+  {
+    photo:"3.jpeg",
+    initials:"SB",
+    name:"Shamaita Benerjee",
+    role:"English Faculty",
+    qualification:"Postgraduate Specialization in English",
+    experience:"8+ years as an English Educator",
+    tags:["Grammar","Writing Skills","Literature"],
+bio:"Shamaita Benerjee brings literature to life with engaging, interactive sessions. She specialises in building strong grammar foundations, sharpening writing skills, and boosting students' confidence in both spoken and written English."
+  }
+];
+
+// ---- TRAVELLING FACULTY / TEAM OF TRIMENTORS DATA ----
+const travellingFaculty = [
+  { initials:"AK", name:"Mr. Anil Tukaram Kasar", qualification:"M.A., B.Ed.",                         experience:"34 years", subjects:"Hindi, Marathi" },
+  { initials:"IB", name:"Indrani Banerjee",         qualification:"M.Sc. (Geo), B.Ed.",               experience:"16 years", subjects:"Geography, Economics" },
+  { initials:"BD", name:"Banita Das",               qualification:"M.Sc. (Chemistry), B.Ed.",         experience:"9 yrs in ICSE + 2 yrs in CBSE", subjects:"Chemistry" },
+  { initials:"SK", name:"Savita Padmanabhan Kurup", qualification:"M.Sc. Zoology, B.Ed.; CTET Qualified", experience:"10 years", subjects:"Biology" },
+  { initials:"MV", name:"Manisha Vaidya",           qualification:"M.A., B.Ed.",                       experience:"18 years", subjects:"Sanskrit, Hindi, Marathi" },
+  { initials:"LD", name:"Latha Divedi",             qualification:"M.A. English, M.Ed.",               experience:"15 years", subjects:"English" },
+  { initials:"AB", name:"Mr. Abhishek",             qualification:"B.Sc. in Mathematics, B.A. in English Literature", experience:"12 years school teaching + 15 years commercial teaching", subjects:"Mathematics" },
+  { initials:"PC", name:"Piyali Chatterjee",        qualification:"B.Sc. Physics, Mathematics & Electronics; MSW (Labour Welfare & Personnel Management)", experience:"31 years", subjects:"Mathematics, Physics" },
+  { initials:"PV", name:"Priyanka Vaishnav",        qualification:"M.A., B.Ed.",                       experience:"6 years", subjects:"Hindi" },
+  { initials:"HK", name:"Harjeet Kaur",             qualification:"M.A., B.Ed.",                       experience:"10 years school teaching", subjects:"Social Studies" }
+];
+
+// ---- GALLERY DATA (photo = filename in this folder) ----
+const galleryItems = [
+  { photo:"a.JPG", cat:"Classroom", title:"Interactive Learning", sub:"Concept clarity in action", tall:true },
+  { photo:"b.JPG", cat:"Faculty",   title:"Expert Guidance",      sub:"Dedicated teaching", tall:false },
+  { photo:"c.jpg", cat:"Classroom", title:"Engaged Students",     sub:"Focused attention", tall:false },
+  { photo:"d.jpg", cat:"Activities",title:"Learning with Fun",    sub:"Beyond the textbook", tall:false },
+  { photo:"e.jpg", cat:"Board Prep",title:"Practice & Revise",    sub:"Board exam readiness", tall:false },
+  { photo:"f.jpg", cat:"Faculty",   title:"Mentorship That Matters", sub:"One-on-one support", tall:false },
+  { photo:"g.jpg", cat:"Celebrations", title:"Moments of Joy",    sub:"Celebrating success", tall:false },
+  { photo:"h.jpg", cat:"Classroom", title:"Building Brilliance",  sub:"From basics to brilliance", tall:false }
+];
+
+/* =========================================================================
+   RENDER DYNAMIC SECTIONS
+   ========================================================================= */
+const teacherGrid = document.getElementById('teacherGrid');
+teachers.forEach((t,i)=>{
+  const card = document.createElement('div');
+  card.className = 'teacher-card reveal';
+  card.innerHTML = `
+<div class="teacher-photo">${t.photo ? `<img src="${t.photo}" alt="${t.name}">` : t.initials}<span class="view-tag">View Profile</span></div>
+    <div class="teacher-info">
+      <h3>${t.name}</h3>
+      <div class="role">${t.role}</div>
+      <div class="qualification">${t.qualification}</div>
+      <div class="experience">📅 ${t.experience}</div>
+    </div>`;
+card.addEventListener('click', ()=> openTeacherModal(i));
+  teacherGrid.appendChild(card);
+});
+
+const tfGrid = document.getElementById('tfGrid');
+travellingFaculty.forEach(tf=>{
+  const card = document.createElement('div');
+  card.className = 'tf-card reveal';
+  card.innerHTML = `
+    <div class="tf-initials">${tf.initials}</div>
+    <h3>${tf.name}</h3>
+    <div class="tf-qual">${tf.qualification}</div>
+    <div class="tf-exp">📅 ${tf.experience}</div>
+    <div class="tf-subjects">${tf.subjects}</div>`;
+  tfGrid.appendChild(card);
+});
+
+/* =========================================================================
+   PHOTO GALLERY (with graceful fallback if an image file is missing)
+   ========================================================================= */
+const galleryGrid = document.getElementById('galleryGrid');
+const lightboxItems = [];
+galleryItems.forEach(g=>{
+  const item = document.createElement('div');
+  item.className = 'gallery-item reveal' + (g.tall ? ' tall' : '') + (g.photo ? '' : ' placeholder');
+  item.innerHTML = `
+    <span class="g-zoom">⤢</span>
+    ${g.photo ? `<img src="${g.photo}" alt="${g.title}" loading="lazy">` : ''}
+    <div class="g-ph">
+      <div class="g-ph-icon">📷</div>
+      <div class="g-ph-name">${g.title}</div>
+      <div class="g-ph-hint">${g.sub}</div>
+    </div>
+    <div class="g-overlay">
+      <span class="g-cat">${g.cat}</span>
+      <div class="g-title">${g.title}</div>
+      <div class="g-sub">${g.sub}</div>
+    </div>`;
+  const img = item.querySelector('img');
+  if(img){
+    img.addEventListener('error', ()=>{ item.classList.add('placeholder','has-img'); });
+    if(g.photo){
+      const li = lightboxItems.length;
+      lightboxItems.push({ photo:g.photo, title:g.title, sub:g.sub, cat:g.cat });
+      item.addEventListener('click', ()=> openLightbox(li));
+    }
+  }
+  galleryGrid.appendChild(item);
+});
+
+/* =========================================================================
+   GALLERY LIGHTBOX
+   ========================================================================= */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxSub = document.getElementById('lightboxSub');
+const lightboxCounter = document.getElementById('lightboxCounter');
+let lightboxIndex = 0;
+
+function renderLightbox(){
+  const item = lightboxItems[lightboxIndex];
+  if(!item) return;
+  lightboxImg.src = item.photo;
+  lightboxTitle.textContent = item.title;
+  lightboxSub.textContent = item.cat + ' · ' + item.sub;
+  lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + lightboxItems.length;
+}
+function openLightbox(i){
+  lightboxIndex = i;
+  renderLightbox();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function moveLightbox(dir){
+  if(!lightboxItems.length) return;
+  lightboxIndex = (lightboxIndex + dir + lightboxItems.length) % lightboxItems.length;
+  renderLightbox();
+}
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', ()=> moveLightbox(-1));
+document.getElementById('lightboxNext').addEventListener('click', ()=> moveLightbox(1));
+lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+
+/* =========================================================================
+   VIDEO TESTIMONIALS — show fallback if videotrimentors.mp4 is not present
+   ========================================================================= */
+const parentVideo = document.getElementById('parentVideo');
+const videoFallback = document.getElementById('videoFallback');
+if(parentVideo){
+  parentVideo.addEventListener('error', ()=>{
+    parentVideo.style.display = 'none';
+    videoFallback.classList.add('show');
+  });
+}
+
+/* =========================================================================
+   SPLASH SCREEN
+   ========================================================================= */
+const splash = document.getElementById('splash');
+function hideSplash(){ splash.classList.add('hide'); }
+document.getElementById('splashSkip').addEventListener('click', hideSplash);
+window.addEventListener('load', ()=>{ setTimeout(hideSplash, 4200); });
+
+/* =========================================================================
+   NAVBAR
+   ========================================================================= */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', ()=>{
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', ()=>{
+  navLinks.classList.toggle('open');
+  navToggle.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
+
+/* =========================================================================
+   SCROLL REVEAL
+   ========================================================================= */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.15});
+revealEls.forEach(el=> revealObserver.observe(el));
+
+/* =========================================================================
+   STATS COUNTER ANIMATION
+   ========================================================================= */
+const statNums = document.querySelectorAll('.stat-num');
+let countersStarted = false;
+function animateCounters(){
+  statNums.forEach(el=>{
+    const target = parseInt(el.dataset.count, 10);
+    let current = 0;
+    const duration = 1600;
+    const stepTime = Math.max(16, duration / target);
+    const step = ()=>{
+      current += Math.ceil(target / (duration / 16));
+      if(current >= target){ el.textContent = target + (el.dataset.suffix || ''); }
+      else { el.textContent = current; requestAnimationFrame(step); }
+    };
+    step();
+  });
+}
+const statsObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && !countersStarted){
+      countersStarted = true;
+      animateCounters();
+    }
+  });
+},{threshold:0.4});
+statsObserver.observe(document.getElementById('statsGrid'));
+
+/* =========================================================================
+   TEACHER MODAL
+   ========================================================================= */
+const teacherModal = document.getElementById('teacherModal');
+const teacherModalContent = document.getElementById('teacherModalContent');
+function openTeacherModal(i){
+  const t = teachers[i];
+  teacherModalContent.innerHTML = `
+    <div class="modal-close" onclick="closeTeacherModal()">✕</div>
+<div class="teacher-modal-photo">${t.photo ? `<img src="${t.photo}" alt="${t.name}">` : t.initials}</div>
+    <h3>${t.name}</h3>
+    <div class="role">${t.role}</div>
+    <p style="color:#3d4557; font-weight:600; font-size:14px; margin-bottom:8px;">${t.qualification}</p>
+    <p style="color:#525b6e; font-size:13.5px; margin-bottom:16px;">📅 ${t.experience}</p>
+    <div class="teacher-modal-tags">${t.tags.map(tag=>`<span>${tag}</span>`).join('')}</div>
+    <p>${t.bio}</p>
+  `;
+  teacherModal.classList.add('open');
+}
+function closeTeacherModal(){ teacherModal.classList.remove('open'); }
+teacherModal.addEventListener('click', (e)=>{ if(e.target === teacherModal) closeTeacherModal(); });
+
+/* =========================================================================
+   ADMISSION MODAL
+   ========================================================================= */
+const admissionModal = document.getElementById('admissionModal');
+function openAdmissionModal(){ admissionModal.classList.add('open'); }
+function closeAdmissionModal(){ admissionModal.classList.remove('open'); }
+admissionModal.addEventListener('click', (e)=>{ if(e.target === admissionModal) closeAdmissionModal(); });
+
+// Auto-show admission modal once, after splash, to gently prompt enquiries
+let admissionShown = false;
+setTimeout(()=>{
+  if(!admissionShown){ admissionShown = true; openAdmissionModal(); }
+}, 9000);
+
+/* =========================================================================
+   CONTACT FORM (demo only — no backend wired up)
+   ========================================================================= */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(this);
+  const parentName = data.get('parentName').trim();
+  const phone = data.get('phone').trim();
+  const grade = data.get('grade');
+  const subject = data.get('subject');
+  const note = data.get('message').trim();
+  const whatsappMessage = [
+    '*New TriMentor Academy Enquiry*',
+    '',
+    `*Parent Name:* ${parentName}`,
+    `*Phone Number:* ${phone}`,
+    `*Child's Grade:* ${grade}`,
+    `*Subject of Interest:* ${subject}`,
+    `*Message:* ${note || 'Not provided'}`
+  ].join('\n');
+  const whatsappUrl = `https://wa.me/918652257033?text=${encodeURIComponent(whatsappMessage)}`;
+  const formSuccess = document.getElementById('formSuccess');
+  formSuccess.textContent = 'Opening WhatsApp with your enquiry details…';
+  formSuccess.classList.add('show');
+  window.open(whatsappUrl, '_blank', 'noopener');
+  this.reset();
+});
+
+/* Close any open modal / lightbox with Escape key */
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape'){ closeTeacherModal(); closeAdmissionModal(); closeLightbox(); }
+  if(e.key === 'ArrowLeft' && lightbox.classList.contains('open')){ moveLightbox(-1); }
+  if(e.key === 'ArrowRight' && lightbox.classList.contains('open')){ moveLightbox(1); }
+});
+</script>
+</body>
+</html>
